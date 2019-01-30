@@ -1,0 +1,31 @@
+.recent-bar-container {
+    position: absolute;
+    bottom: 8px;
+    
+    height: 5vh;
+    background-color: transparent;
+    width: 100%;
+    text-align: center;
+}
+
+.recent-bar-container div {
+    display: flex;
+    align-items: flex-end;
+}
+
+.recent-bar-container div a {
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 -4px rgb(109, 109, 109);
+}
+
+.recent-bar-container div a:hover {
+    background-color: rgb(39, 39, 39);
+}
+
+.recent-bar-container div a:active{
+    padding: 10px;
+}

@@ -1,0 +1,35 @@
+.list-container {
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    height: 100vh;
+}
+
+.list-container .links {
+    border-radius: 8px;
+    background-color: royalblue;
+    margin: 8px;
+    width: 100vw;
+    min-height: 80vh;
+    max-height: 100vh;
+
+    display: flex;
+}
+
+.list-container .links a {
+    flex-basis: 25%;
+    font-size: 20px;
+    height: 15vh;
+    text-decoration: none;
+    background-color: white;
+    margin: 8px;
+    text-align: center;
+}
+
+.list-container .links  a:hover {
+    background-color: whitesmoke;
+}
+
+.list-container .links  a:focus {
+    color:black;
+}
