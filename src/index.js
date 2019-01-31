@@ -13,7 +13,7 @@ import {getState} from './actions/global'
 import thunk from 'redux-thunk';
 import io from 'socket.io-client';
 import createSocketIoMiddleware from 'redux-socket.io';
-let socket = io('http://localhost:5000');
+let socket = io('https://www.yousifmansour.space/api/online-os');
 // will emit aciton if it's not from server
 let socketIoMiddleware = createSocketIoMiddleware(socket, (type, action) => !action.fromServer);
 
@@ -27,9 +27,7 @@ const persistToServer = store => next => action => {
 /* MIDDLEWARE SETUP */
 
 const store = applyMiddleware(socketIoMiddleware, persistToServer, thunk)(createStore)(reducer);
-// const store = createStore(reducer);
-
-// gets latest state from server
+// const store = createStore(reducer); gets latest state from server
 store.dispatch(getState());
 
 ReactDOM.render(

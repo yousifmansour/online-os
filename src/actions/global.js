@@ -4,7 +4,7 @@ import {SET_STATE} from './types';
 // redux state
 export function getState() {
     return (dispatch) => {
-        fetch('http://localhost:5000/state').then((data) => {
+        fetch('https://www.yousifmansour.space/api/online-os/state').then((data) => {
             return data.json();
         }).then((data) => {
             dispatch({type: SET_STATE, payload: data});
