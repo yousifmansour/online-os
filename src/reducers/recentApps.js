@@ -18,8 +18,11 @@ export default function recentApps(state = initialState, action) {
             return [...state].filter((app) => app !== action.payload);
 
         case SET_STATE:
-            return action.payload.recentApps;
-
+            if (action.payload.recentApps) 
+                return action.payload.recentApps;
+            else 
+                return state;
+            
         default:
             return state;
     }
