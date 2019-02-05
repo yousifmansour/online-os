@@ -1,12 +1,10 @@
 import React from 'react';
 import './RecentApps.css'
-import NavBar from './NavBar';
+// import NavBar from './NavBar';
 import {NavLink} from 'react-router-dom';
 import {connect} from 'react-redux';
 
 import {closeApp} from './actions/recentApps';
-
-// INTERESTING. work on resetting data of apps when closed
 
 class RecentApps extends React.Component {
     render() {
@@ -26,7 +24,7 @@ class RecentApps extends React.Component {
         // make to a presentaional component
         return (
             <div className='recent-apps-contaienr'>
-                <NavBar/>
+                {/* <NavBar/> */}
                 <div className='links'>
                     {recentApps}</div>
             </div>

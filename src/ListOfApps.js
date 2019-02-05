@@ -15,6 +15,10 @@ class ListOfApps extends React.Component {
                     <NavLink exact to="/notes" activeClassName="active">
                         Notes
                     </NavLink>
+
+                    <NavLink exact to="/diary" activeClassName="active">
+                        Diary
+                    </NavLink>
                 </div>
             </div>
         );

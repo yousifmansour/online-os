@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 
 import * as calculatorActions from '../actions/calculator';
 import {addApp} from '../actions/recentApps';
-import NavBar from '../NavBar';
+// import NavBar from '../NavBar';
 
 class Calculator extends React.Component {
     constructor(props) {
@@ -30,7 +30,7 @@ class Calculator extends React.Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit} className='calculator-container'>
-                <NavBar/>
+                {/* <NavBar/> */}
                 <h2>Calculator that only adds</h2>
                 <input
                     type='number'

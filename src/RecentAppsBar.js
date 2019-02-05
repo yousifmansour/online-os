@@ -2,6 +2,8 @@ import React from 'react';
 import './RecentAppsBar.css';
 import {NavLink} from 'react-router-dom';
 
+import {withRouter} from "react-router";
+
 class RecentAppsBar extends React.Component {
     render() {
         return (
@@ -12,8 +14,14 @@ class RecentAppsBar extends React.Component {
                 justifyContent: 'center'
             }}>
                 <div>
+                    <button onClick={() => this.props.history.goBack()}>
+                        Back
+                    </button>
+                    <NavLink exact to="/" activeClassName="active">
+                        Home
+                    </NavLink>
                     <NavLink exact to="/recent" activeClassName="active">
-                        Reecent Apps
+                        Recent Apps
                     </NavLink>
                 </div>
             </div>
@@ -21,4 +29,4 @@ class RecentAppsBar extends React.Component {
     }
 }
 
-export default RecentAppsBar;
+export default withRouter(RecentAppsBar);

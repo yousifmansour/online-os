@@ -1,0 +1,40 @@
+@import url( 'https://fonts.googleapis.com/css?family=Bitter');
+
+.diary-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Bitter', serif;
+    line-height: 1.5;
+    max-width: 100vw;
+    background-color: #ffffff;
+    color: #111111;
+}
+
+.diary-container h1 {
+    color: #001f3f;
+    text-align: center;
+}
+
+.diary-container h2 {
+    max-width: 90vw;
+    color: #0074D9;
+}
+
+.diary-container a {
+    color: #F012BE;
+}
+
+.diary-container img,
+.diary-container p {
+    font-size: 22px;
+    max-width: 90vw;
+    word-wrap: break-word;
+}
+
+.diary-container img {
+    border: 2px solid gray;
+    padding: 10px;
+    border-radius: 12px;
+    max-width: 80vw;
+}

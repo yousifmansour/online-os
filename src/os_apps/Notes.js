@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 
 import * as notesActions from '../actions/notes';
 import {addApp} from '../actions/recentApps';
-import NavBar from '../NavBar';
+// import NavBar from '../NavBar';
 
 class Notes extends React.Component {
     constructor(props) {
@@ -22,7 +22,7 @@ class Notes extends React.Component {
     render() {
         return (
             <div className='notes-container'>
-                <NavBar/>
+                {/* <NavBar/> */}
                 <h2>Notes</h2>
                 <textarea
                     name='note'

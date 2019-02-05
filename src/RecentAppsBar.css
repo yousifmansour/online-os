@@ -1,9 +1,9 @@
 .recent-bar-container {
-    position: absolute;
-    bottom: 8px;
-    
-    height: 5vh;
-    background-color: transparent;
+    position: fixed;
+    bottom: 0;
+
+    background-color: rgba(0, 0, 0);
+
     width: 100%;
     text-align: center;
 }
@@ -13,19 +13,25 @@
     align-items: flex-end;
 }
 
-.recent-bar-container div a {
-    text-decoration: none;
+.recent-bar-container div button {
+    height: 100%;
+    border: none;
+}
+
+.recent-bar-container div a,
+.recent-bar-container div button {
     background-color: black;
+    text-decoration: none;
     color: white;
-    border-radius: 8px;
     padding: 8px;
-    box-shadow: 0 -4px rgb(109, 109, 109);
 }
-
-.recent-bar-container div a:hover {
-    background-color: rgb(39, 39, 39);
+.recent-bar-container div a:hover,
+.recent-bar-container div button:hover {
+    background-color: rgb(207, 207, 207);
+    color: black;
 }
-
-.recent-bar-container div a:active{
-    padding: 10px;
+.recent-bar-container div a:active,
+.recent-bar-container div button:hover {
+    background-color: rgb(207, 207, 207);
+    color: black;
 }
