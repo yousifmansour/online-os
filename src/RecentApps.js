@@ -14,7 +14,10 @@ class RecentApps extends React.Component {
             .recentApps
             .map((app, i) => (
                 <div key={i} className='running-app'>
-                    <NavLink exact to={'/' + app} activeClassName="active">{app}
+                    <NavLink exact to={'/' + app} activeClassName="active">
+                        <h2>
+                            {app}
+                        </h2>
                     </NavLink>
                     <button onClick={() => this.props.closeApp(app)}>X</button>
                 </div>
@@ -24,9 +27,9 @@ class RecentApps extends React.Component {
         // make to a presentaional component
         return (
             <div className='recent-apps-contaienr'>
-                {/* <NavBar/> */}
                 <div className='links'>
-                    {recentApps}</div>
+                    {recentApps}
+                </div>
             </div>
 
         );

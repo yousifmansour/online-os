@@ -1,40 +1,41 @@
 .recent-apps-contaienr {
-    display: flex;
-    width: 100%;
-    align-items: center;
-
-    height: 100vh;
+    min-width: 99vw;
+    max-width: 100vh;
+    min-height: 100%;
+    background-color: rgb(255, 99, 82);
 }
 
 .recent-apps-contaienr .links {
-    border-radius: 8px;
-    background-color: rgb(255, 99, 82);
-
-    width: 100vw;
-    margin: 8px;
-
-    min-height: 80vh;
-    max-height: 100vh;
+    width: 100%;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* overflow-y: scroll; */
+    min-height: 140vh;
 }
 
 .recent-apps-contaienr .links .running-app {
-    flex-basis: 25%;
-    height: 10vh;
+    /* flex-basis: 30vh; */
+    height: 45vh;
+    width: 80%;
     text-decoration: none;
     background-color: white;
-    margin: 8px;
+
+    margin: 10px;
+
     text-align: center;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.recent-apps-contaienr .links .running-app a {
-    flex-grow: 2;
+.recent-apps-contaienr .running-app a {
     font-size: 20px;
-    height: 100%;
-    align-self: center;
+    width: 80%;
+
 }
-.recent-apps-contaienr .links a:hover {
+.recent-apps-contaienr .running-app:hover {
     background-color: whitesmoke;
 }

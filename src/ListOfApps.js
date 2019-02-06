@@ -7,6 +7,10 @@ class ListOfApps extends React.Component {
     render() {
         return (
             <div className='list-container'>
+                <div className='time-and-date'>
+                    <h1>02:31 PM</h1>
+                    <h2>WED, FEB 04</h2>
+                </div>
                 <div className='links'>
                     <NavLink exact to="/calculator" activeClassName="active">
                         Calculator

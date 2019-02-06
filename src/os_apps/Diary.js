@@ -37,6 +37,7 @@ class Diary extends React.Component {
             .addApp(this.name);
 
         window.addEventListener('scroll', this.updateScrollPosition);
+        window.scrollTo(0, this.props.scrollPosition);
     }
 
     componentWillUnmount() {
@@ -50,6 +51,7 @@ class Diary extends React.Component {
     }
 
     render() {
+        //window.scrollTo(0, this.props.scrollPosition);
         return (
             <div className="diary-container">
                 {this.state.diaryHTML

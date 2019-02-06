@@ -15,17 +15,19 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <Switch>
-                    <Route exact path="/calculator" component={Calculator}/>
+                <div className='viewport'>
+                    <Switch>
+                        <Route exact path="/calculator" component={Calculator}/>
 
-                    <Route exact path="/notes" component={Notes}/>
+                        <Route exact path="/notes" component={Notes}/>
 
-                    <Route exact path="/diary" component={Diary}/>
+                        <Route exact path="/diary" component={Diary}/>
 
-                    <Route exact path="/" component={ListOfApps}/>
+                        <Route exact path="/" component={ListOfApps}/>
 
-                    <Route exact path="/recent" component={RecentApps}/>
-                </Switch>
+                        <Route exact path="/recent" component={RecentApps}/>
+                    </Switch>
+                </div>
                 <RecentAppsBar/>
             </div>
         );
