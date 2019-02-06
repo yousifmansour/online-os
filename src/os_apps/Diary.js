@@ -2,6 +2,7 @@ import React from 'react';
 import ReactHtmlParser from 'react-html-parser';
 
 import {connect} from 'react-redux';
+import * as diaryActions from '../actions/diary';
 import {addApp} from '../actions/recentApps';
 
 import './Diary.css';
@@ -12,7 +13,7 @@ class Diary extends React.Component {
         this.state = {
             diaryHTML: null
         }
-        this.name = 'diary'
+        this.name = 'diary';
     }
 
     componentDidMount() {
@@ -25,12 +26,27 @@ class Diary extends React.Component {
                         .querySelector('body')
                         .innerHTML;
                     this.setState({diaryHTML: diary});
+
+                    // UPDATE SCROLL POSITION AFTER HTML DATA IS LOADED
+                    window.scrollTo(0, this.props.scrollPosition);
                 });
         });
 
         this
             .props
             .addApp(this.name);
+
+        window.addEventListener('scroll', this.updateScrollPosition);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.updateScrollPosition);
+    }
+
+    updateScrollPosition = () => {
+        this
+            .props
+            .setScrollPosition(window.scrollY);
     }
 
     render() {
@@ -50,4 +66,11 @@ class Diary extends React.Component {
     }
 }
 
-export default connect(null, {addApp})(Diary);
+function mapStateToProps(state) {
+    return state.diary;
+}
+
+export default connect(mapStateToProps, {
+    addApp,
+    ...diaryActions
+})(Diary);
