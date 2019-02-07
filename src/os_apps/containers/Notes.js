@@ -3,8 +3,8 @@ import './Notes.css';
 import React from 'react';
 import {connect} from 'react-redux';
 
-import * as notesActions from '../actions/notes';
-import {addApp} from '../actions/recentApps';
+import * as notesActions from '../../actions/notes';
+import {addApp} from '../../actions/recentApps';
 
 class Notes extends React.Component {
     constructor(props) {

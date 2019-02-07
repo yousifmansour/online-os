@@ -1,0 +1,14 @@
+.avalible-weeks{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.avalible-weeks .week{
+    min-width: 20vw;
+    text-align: center;
+    background-color: whitesmoke;
+    color: black;
+    cursor: pointer;
+}

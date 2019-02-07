@@ -2,8 +2,7 @@ import React from 'react';
 import ReactHtmlParser from 'react-html-parser';
 
 import {connect} from 'react-redux';
-import * as diaryActions from '../actions/diary';
-import {addApp} from '../actions/recentApps';
+import * as diaryActions from '../../actions/diary';
 
 import './Diary.css';
 
@@ -13,11 +12,10 @@ class Diary extends React.Component {
         this.state = {
             diaryHTML: null
         }
-        this.name = 'diary';
     }
 
     componentDidMount() {
-        fetch('https://www.yousifmansour.space/api/online-os/diaries').then((data) => {
+        fetch('https://www.yousifmansour.space/api/online-os/diaries/' + this.props.currentWeek).then((data) => {
             data
                 .text()
                 .then((text) => {
@@ -34,10 +32,6 @@ class Diary extends React.Component {
                 });
         });
 
-        this
-            .props
-            .addApp(this.name);
-
         document
             .querySelector('.viewport')
             .addEventListener('scroll', this.updateScrollPosition);
@@ -53,7 +47,6 @@ class Diary extends React.Component {
     }
 
     updateScrollPosition = () => {
-
         this
             .props
             .setScrollPosition(document.querySelector('.viewport').scrollTop);
@@ -63,14 +56,16 @@ class Diary extends React.Component {
         return (
             <div className="diary-container">
                 {this.state.diaryHTML
-                    ? ReactHtmlParser(this.state.diaryHTML)
+                    ? <div>
+                            <button
+                                style={{
+                                position: 'sticky',
+                                top: '10px'
+                            }}
+                                onClick={() => this.props.setCurrentWeek('')}>back</button>
+                            {ReactHtmlParser(this.state.diaryHTML)}
+                        </div>
                     : 'loading'}
-                <div
-                    style={{
-                    height: '1px',
-                    width: '1px',
-                    paddingBottom: '10vh'
-                }}></div>
             </div>
         );
     }
@@ -81,6 +76,5 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, {
-    addApp,
     ...diaryActions
 })(Diary);

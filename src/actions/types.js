@@ -15,3 +15,4 @@ export const SET_NOTE = 'set_note';
 
 // diary aciton types
 export const SET_SCROLL_POSITION = 'set_scroll_position';
+export const SET_CURRENT_WEEK = 'set_current_week';
