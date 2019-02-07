@@ -28,7 +28,9 @@ class App extends Component {
                         <Route exact path="/recent" component={RecentApps}/>
                     </Switch>
                 </div>
-                <RecentAppsBar/>
+                <div className="navbar">
+                    <RecentAppsBar/>
+                </div>
             </div>
         );
     }

@@ -1,10 +1,11 @@
 .list-container {
     width: 100vw;
-    height: 100%;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    /* border:2px solid red; */
 }
 
 .list-container .time-and-date {
@@ -17,9 +18,7 @@
 .list-container .links {
     flex-grow: 3;
     background-color: whitesmoke;
-    width: 100vw;
-    /* min-height: 80vh;
-    max-height: 100vh; */
+    width: 100vw;  
 
     display: flex;
     align-items: flex-end;
@@ -31,12 +30,14 @@
     font-size: 20px;
     height: 15vh;
     text-decoration: none;
-    background-color: white;
+    background-color: darkgray;
+    color: white;
     margin: 8px;
     text-align: center;
 }
 .list-container .links a:hover {
-    background-color: whitesmoke;
+    background-color: grey;
+    color:azure;
 }
 .list-container .links a:focus {
     color: black;

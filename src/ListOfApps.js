@@ -8,8 +8,8 @@ class ListOfApps extends React.Component {
         return (
             <div className='list-container'>
                 <div className='time-and-date'>
-                    <h1>02:31 PM</h1>
-                    <h2>WED, FEB 04</h2>
+                    <h1>08:49 AM</h1>
+                    <h2>THU, FEB 07</h2>
                 </div>
                 <div className='links'>
                     <NavLink exact to="/calculator" activeClassName="active">
