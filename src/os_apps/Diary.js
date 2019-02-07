@@ -28,7 +28,9 @@ class Diary extends React.Component {
                     this.setState({diaryHTML: diary});
 
                     // UPDATE SCROLL POSITION AFTER HTML DATA IS LOADED
-                    window.scrollTo(0, this.props.scrollPosition);
+                    document
+                        .querySelector('.viewport')
+                        .scrollTop = this.props.scrollPosition;
                 });
         });
 
@@ -36,22 +38,28 @@ class Diary extends React.Component {
             .props
             .addApp(this.name);
 
-        window.addEventListener('scroll', this.updateScrollPosition);
-        window.scrollTo(0, this.props.scrollPosition);
+        document
+            .querySelector('.viewport')
+            .addEventListener('scroll', this.updateScrollPosition);
+        document
+            .querySelector('.viewport')
+            .scrollTop = this.props.scrollPosition;
     }
 
     componentWillUnmount() {
-        window.removeEventListener('scroll', this.updateScrollPosition);
+        document
+            .querySelector('.viewport')
+            .removeEventListener('scroll', this.updateScrollPosition);
     }
 
     updateScrollPosition = () => {
+
         this
             .props
-            .setScrollPosition(window.scrollY);
+            .setScrollPosition(document.querySelector('.viewport').scrollTop);
     }
 
     render() {
-        //window.scrollTo(0, this.props.scrollPosition);
         return (
             <div className="diary-container">
                 {this.state.diaryHTML
