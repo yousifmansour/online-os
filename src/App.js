@@ -8,7 +8,8 @@ import RecentAppsBar from './RecentAppsBar';
 
 import Calculator from './os_apps/containers/Calculator';
 import Notes from './os_apps/containers/Notes';
-import DiaryContainer from './os_apps/containers/DiaryContainer';
+import DiariesContainer from './os_apps/containers/DiariesContainer';
+import Diary from './os_apps/components/Diary';
 
 class App extends Component {
     render() {
@@ -18,10 +19,14 @@ class App extends Component {
                     <Switch>
                         <Route exact path="/calculator" component={Calculator}/>
                         <Route exact path="/notes" component={Notes}/>
-                        <Route exact path="/diary" component={DiaryContainer}/>
+                        
+                        <Route exact path="/diaries" component={DiariesContainer}/>
 
                         <Route exact path="/" component={ListOfApps}/>
                         <Route exact path="/recent" component={RecentApps}/>
+
+                        <Route exact path="/diaries/:currentWeek" component={Diary}/>
+
                     </Switch>
                 </div>
                 <div className="navbar">

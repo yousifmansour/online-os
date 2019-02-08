@@ -1,21 +1,21 @@
 import React from 'react';
 
-import Diary from '../components/Diary';
-
 import {connect} from 'react-redux';
 import * as diaryActions from '../../actions/diary';
 import {addApp} from '../../actions/recentApps';
 
-import './DiaryContainer.css';
+import {Link} from 'react-router-dom';
 
-class DiaryContainer extends React.Component {
+import Diaries from '../components/Diaries';
+
+class DiariesContainer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             avalibleWeeks: []
         }
 
-        this.name = 'diary';
+        this.name = 'diaries';
     }
     componentDidMount() {
         this
@@ -40,21 +40,19 @@ class DiaryContainer extends React.Component {
             .map((week) => {
                 week = week.substring(0, week.indexOf('.html'));
                 return (
-                    <h2 className='week' key={week} onClick={() => this.props.setCurrentWeek(week)}>{week}</h2>
+                    <div key={week}>
+                        <Link to={'/diaries/' + week}>
+                            <h2 className='diary'>
+                                {week}
+                            </h2>
+                        </Link>
+                    </div>
+
                 );
             });
-        if (this.props.currentWeek !== '') 
-            return <Diary/>
-        else 
-            return (
-                <div className='avalible-weeks'>
-                    <h1>Documentation For Online OS</h1>
-                    <h2>Avalible Weeks</h2>
-                    {weeks}
-                </div>
-            );
-        }
+        return (<Diaries weeks={weeks}/>);
     }
+}
 
 function mapStateToProps(state) {
     return state.diary;
@@ -63,4 +61,4 @@ function mapStateToProps(state) {
 export default connect(mapStateToProps, {
     addApp,
     ...diaryActions
-})(DiaryContainer);
+})(DiariesContainer);

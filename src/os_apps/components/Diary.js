@@ -3,6 +3,8 @@ import ReactHtmlParser from 'react-html-parser';
 
 import {connect} from 'react-redux';
 import * as diaryActions from '../../actions/diary';
+// import {addApp} from '../../actions/recentApps';
+import {closeApp} from '../../actions/recentApps';
 
 import './Diary.css';
 
@@ -15,7 +17,7 @@ class Diary extends React.Component {
     }
 
     componentDidMount() {
-        fetch('https://www.yousifmansour.space/api/online-os/diaries/' + this.props.currentWeek).then((data) => {
+        fetch('https://www.yousifmansour.space/api/online-os/diaries/' + this.props.match.params.currentWeek).then((data) => {
             data
                 .text()
                 .then((text) => {
@@ -38,6 +40,7 @@ class Diary extends React.Component {
         document
             .querySelector('.viewport')
             .scrollTop = this.props.scrollPosition;
+
     }
 
     componentWillUnmount() {
@@ -57,12 +60,6 @@ class Diary extends React.Component {
             <div className="diary-container">
                 {this.state.diaryHTML
                     ? <div>
-                            <button
-                                style={{
-                                position: 'sticky',
-                                top: '10px'
-                            }}
-                                onClick={() => this.props.setCurrentWeek('')}>back</button>
                             {ReactHtmlParser(this.state.diaryHTML)}
                         </div>
                     : 'loading'}
@@ -76,5 +73,6 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, {
-    ...diaryActions
+    ...diaryActions,
+    closeApp
 })(Diary);

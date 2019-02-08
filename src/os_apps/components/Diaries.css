@@ -1,11 +1,11 @@
-.avalible-weeks{
+.diaries-container{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.avalible-weeks .week{
+.diaries-container .diary{
     min-width: 20vw;
     text-align: center;
     background-color: whitesmoke;

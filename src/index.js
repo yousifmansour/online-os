@@ -29,7 +29,8 @@ const persistToServer = store => next => action => {
 /* MIDDLEWARE SETUP */
 
 const store = applyMiddleware(socketIoMiddleware, persistToServer, thunk)(createStore)(reducer);
-// const store = createStore(reducer); gets latest state from server
+
+// const store = applyMiddleware(thunk)(createStore)(reducer);
 
 store.dispatch(getState());
 
