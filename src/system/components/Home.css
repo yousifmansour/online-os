@@ -8,13 +8,6 @@
     /* border:2px solid red; */
 }
 
-.list-container .time-and-date {
-    background-color: black;
-    color: white;
-    text-align: center;
-    width: 100%;
-}
-
 .list-container .links {
     flex-grow: 3;
     background-color: whitesmoke;
