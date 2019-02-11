@@ -40,7 +40,6 @@ class Diary extends React.Component {
         document
             .querySelector('.viewport')
             .scrollTop = this.props.scrollPosition;
-
     }
 
     componentWillUnmount() {

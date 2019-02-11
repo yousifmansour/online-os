@@ -21,7 +21,6 @@ class RecentApps extends React.Component {
                     </NavLink>
                     <button onClick={() => this.props.closeApp(app)}>X</button>
                 </div>
-
             ));
 
         // make to a presentaional component

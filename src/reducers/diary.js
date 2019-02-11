@@ -15,9 +15,13 @@ export default function diary(state = initialState, action) {
             };
 
         case SET_CURRENT_WEEK:
+            let scrollPosition = state.scrollPosition;
+            if (state.currentWeek !== action.payload) 
+                scrollPosition = 0;
             return {
                 ...state,
-                currentWeek: action.payload
+                currentWeek: action.payload,
+                scrollPosition
             };
 
         case CLOSE_APP:

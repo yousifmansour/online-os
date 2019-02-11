@@ -17,6 +17,7 @@ class DiariesContainer extends React.Component {
 
         this.name = 'diaries';
     }
+
     componentDidMount() {
         this
             .props
@@ -41,7 +42,7 @@ class DiariesContainer extends React.Component {
                 week = week.substring(0, week.indexOf('.html'));
                 return (
                     <div key={week}>
-                        <Link to={'/diaries/' + week}>
+                        <Link to={'/diaries/' + week} onClick={() => this.props.setCurrentWeek(week)}>
                             <h2 className='diary'>
                                 {week}
                             </h2>
