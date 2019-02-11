@@ -6,7 +6,7 @@ import {addApp} from '../../actions/recentApps';
 
 import {Link} from 'react-router-dom';
 
-import Diaries from '../components/Diaries';
+import DiariesList from '../components/DiariesList';
 
 class DiariesContainer extends React.Component {
     constructor(props) {
@@ -35,7 +35,7 @@ class DiariesContainer extends React.Component {
     }
 
     render() {
-        let weeks = this
+        let diaries = this
             .state
             .avalibleWeeks
             .map((week) => {
@@ -51,7 +51,7 @@ class DiariesContainer extends React.Component {
 
                 );
             });
-        return (<Diaries weeks={weeks}/>);
+        return (<DiariesList diaries={diaries}/>);
     }
 }
 

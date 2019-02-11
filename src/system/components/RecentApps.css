@@ -1,11 +1,11 @@
-.recent-apps-contaienr {
+.recent-apps {
     min-width: 99vw;
     max-width: 100vh;
     min-height: 100%;
     background-color: rgb(255, 99, 82);
 }
 
-.recent-apps-contaienr .links {
+.recent-apps .links {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -15,7 +15,7 @@
     min-height: 140vh;
 }
 
-.recent-apps-contaienr .links .running-app {
+.recent-apps .links div {
     /* flex-basis: 30vh; */
     height: 45vh;
     width: 80%;
@@ -31,11 +31,11 @@
     align-items: center;
 }
 
-.recent-apps-contaienr .running-app a {
+.recent-apps .links div a {
     font-size: 20px;
     width: 80%;
 
 }
-.recent-apps-contaienr .running-app:hover {
+.recent-apps .links div:hover {
     background-color: whitesmoke;
 }

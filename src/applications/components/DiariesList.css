@@ -1,11 +1,11 @@
-.diaries-container{
+.diaries-list {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.diaries-container .diary{
+.diaries-list div h2 {
     min-width: 20vw;
     text-align: center;
     background-color: whitesmoke;

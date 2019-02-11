@@ -3,7 +3,6 @@ import ReactHtmlParser from 'react-html-parser';
 
 import {connect} from 'react-redux';
 import * as diaryActions from '../../actions/diary';
-// import {addApp} from '../../actions/recentApps';
 import {closeApp} from '../../actions/recentApps';
 
 import './Diary.css';
