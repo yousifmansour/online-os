@@ -3,8 +3,6 @@ import './TimeAndDate.css';
 
 const TimeAndDate = () => {
     let date = new Date();
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
     let days = [
         'SUN',
         'MON',
@@ -34,9 +32,15 @@ const TimeAndDate = () => {
 
     let dayNumber = date.getDate();
 
+    let hoursAndMinutes = date.toLocaleString('en-US', {
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: true
+    });
+
     return (
         <div className='time-and-date'>
-            <h1>{hours}:{minutes}</h1>
+            <h1>{hoursAndMinutes}</h1>
             <h2>{day}, {month}
                 &nbsp;{dayNumber}</h2>
         </div>

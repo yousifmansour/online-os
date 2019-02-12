@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans');
+
+
 .time-and-date {
     background-color: black;
     color: white;
     text-align: center;
     width: 100%;
+
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 20px;
+
 }

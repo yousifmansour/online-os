@@ -8,13 +8,13 @@ const RecentAppsBar = ({history}) => (
     <div className='recent-bar'>
         <div>
             <button onClick={() => history.goBack()}>
-                Back
+                <i className="fas fa-2x fa-chevron-left"></i>
             </button>
             <NavLink exact to="/" activeClassName="active">
-                Home
+                <i className="far fa-circle"></i>
             </NavLink>
             <NavLink exact to="/recent" activeClassName="active">
-                Recent Apps
+                <i className="far fa-square"></i>
             </NavLink>
         </div>
     </div>

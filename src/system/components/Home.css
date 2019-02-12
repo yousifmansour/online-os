@@ -1,37 +1,47 @@
 .list-container {
     width: 100vw;
-    height: 90vh;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
-    /* border:2px solid red; */
+
+    animation: scale-down 0.2s forwards ease-in-out;
 }
 
 .list-container .links {
     flex-grow: 3;
-    background-color: whitesmoke;
-    width: 100vw;  
+    width: 100vw;
 
     display: flex;
+    justify-content: space-evenly;
     align-items: flex-end;
     flex-wrap: wrap;
 }
 
 .list-container .links a {
-    flex-basis: 20%;
+    flex-basis: 30%;
+    min-width: 25vw;
     font-size: 20px;
     height: 15vh;
     text-decoration: none;
-    background-color: darkgray;
+    background-color: black;
+    border-radius: 10px;
     color: white;
-    margin: 8px;
+    margin: 4px;
     text-align: center;
 }
 .list-container .links a:hover {
-    background-color: grey;
-    color:azure;
+    background-color: rgb(61, 61, 61);
+    color: azure;
 }
 .list-container .links a:focus {
     color: black;
+}
+@keyframes scale-down {
+    0% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
 }

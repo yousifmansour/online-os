@@ -1,7 +1,11 @@
+@import url( 'https://fonts.googleapis.com/css?family=Open+Sans');
+
 body {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    font-family: 'Open Sans', sans-serif;
+
 }
 
 .App {
@@ -21,12 +25,12 @@ body {
 
 /* scrollbar styles */
 .App .viewport::-webkit-scrollbar {
-    width: 8px;
+    width: 4px;
     background-color: whitesmoke;
 }
 
 .App .viewport::-webkit-scrollbar-thumb {
-    background-color: rgb(187, 187, 187);
-    border-radius: 8px;
+    background-color: darkgray;
+    border-radius: 4px;
 }
 /* scrollbar styles */
