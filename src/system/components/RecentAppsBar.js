@@ -6,17 +6,17 @@ import './RecentAppsBar.css';
 
 const RecentAppsBar = ({history}) => (
     <div className='recent-bar'>
-        <div>
-            <button onClick={() => history.goBack()}>
-                <i className="fas fa-2x fa-chevron-left"></i>
-            </button>
-            <NavLink exact to="/" activeClassName="active">
-                <i className="far fa-circle"></i>
-            </NavLink>
-            <NavLink exact to="/recent" activeClassName="active">
-                <i className="far fa-square"></i>
-            </NavLink>
-        </div>
+
+        <button onClick={() => history.goBack()}>
+            <i className="fas fa-2x fa-chevron-left"></i>
+        </button>
+        <NavLink exact to="/" activeClassName="active">
+            <i className="far fa-circle"></i>
+        </NavLink>
+        <NavLink exact to="/recent" activeClassName="active">
+            <i className="far fa-square"></i>
+        </NavLink>
+
     </div>
 );
 
