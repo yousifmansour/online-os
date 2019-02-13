@@ -1,8 +1,18 @@
-.calculator-container{
+.calculator-container {
     display: flex;
     flex-direction: column;
     background-color: white;
+    min-height: 50vh;
     border-radius: 8px;
+    /* justify-content: center; */
+    align-items: center;
     padding: 20px;
-    width: 80%;
+
+    animation: come-up 0.35s ease-in-out forwards;
+}
+
+.calculator-container form {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
 }

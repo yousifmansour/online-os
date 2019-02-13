@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    animation: come-up 0.35s ease-in-out forwards;
 }
 
 .diaries-list div h2 {
@@ -11,4 +12,5 @@
     background-color: whitesmoke;
     color: black;
     cursor: pointer;
+    /* animation: come-up 0.5s ease-in-out forwards; */
 }

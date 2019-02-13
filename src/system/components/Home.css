@@ -37,11 +37,5 @@
 .list-container .links a:focus {
     color: black;
 }
-@keyframes scale-down {
-    0% {
-        transform: scale(1.2);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
+
+

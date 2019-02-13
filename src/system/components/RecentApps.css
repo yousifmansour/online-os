@@ -44,14 +44,3 @@
 .recent-apps .links div:hover {
     background-color: whitesmoke;
 }
-@keyframes come-up {
-    0% {
-        transform: translateY(200px);
-        overflow: hidden;
-    }
-
-    100% {
-        transform: translateY(000px);
-        overflow: auto;
-    }
-}
