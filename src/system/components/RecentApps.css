@@ -2,7 +2,9 @@
     min-width: 99vw;
     max-width: 100vh;
     min-height: 100%;
-    background-color: rgb(255, 99, 82);
+    background-color: rgb(255, 112, 112);
+    padding-top: 5vh;
+    padding-bottom: 5vh;
 }
 
 .recent-apps .links {
@@ -18,17 +20,20 @@
 .recent-apps .links div {
     /* flex-basis: 30vh; */
     height: 45vh;
-    width: 80%;
+    min-width: 80vw;
     text-decoration: none;
     background-color: white;
 
-    margin: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+
+    animation: come-up 0.35s ease-in-out forwards;
 }
 
 .recent-apps .links div a {
@@ -38,4 +43,15 @@
 }
 .recent-apps .links div:hover {
     background-color: whitesmoke;
+}
+@keyframes come-up {
+    0% {
+        transform: translateY(200px);
+        overflow: hidden;
+    }
+
+    100% {
+        transform: translateY(000px);
+        overflow: auto;
+    }
 }

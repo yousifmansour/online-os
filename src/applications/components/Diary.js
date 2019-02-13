@@ -45,6 +45,11 @@ class Diary extends React.Component {
         document
             .querySelector('.viewport')
             .removeEventListener('scroll', this.updateScrollPosition);
+
+        document
+            .querySelector('.viewport')
+            .scrollTop = 0;
+
     }
 
     updateScrollPosition = () => {

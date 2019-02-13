@@ -18,6 +18,7 @@ const RecentAppsContainer = (props) => {
                 <button onClick={() => props.closeApp(app)}>X</button>
             </div>
         ));
+
     return (<RecentApps recentApps={recentApps}/>);
 }
 
