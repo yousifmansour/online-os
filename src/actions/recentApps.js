@@ -1,4 +1,4 @@
-import {ADD_APP, CLOSE_APP} from './types';
+import {ADD_APP, CLOSE_APP} from 'actions/types';
 
 // consider chaning names to ids?
 export function addApp(appName) {

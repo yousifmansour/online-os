@@ -1,5 +1,5 @@
 import React from 'react';
-import './Notes.css';
+import 'applications/components/Notes.css';
 
 const Notes = ({note, setNote}) => (
     <div className='notes-container'>

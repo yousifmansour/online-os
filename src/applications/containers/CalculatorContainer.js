@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import * as calculatorActions from '../../actions/calculator';
-import {addApp} from '../../actions/recentApps';
-import Calculator from '../components/Calculator';
+import * as calculatorActions from 'actions/calculator';
+import {addApp} from 'actions/recentApps';
+import Calculator from 'applications/components/Calculator';
 
 class CalculatorContainer extends React.Component {
     constructor(props) {

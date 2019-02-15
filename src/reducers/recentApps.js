@@ -1,4 +1,4 @@
-import {ADD_APP, CLOSE_APP, SET_STATE} from '../actions/types';
+import {ADD_APP, CLOSE_APP, SET_STATE} from 'actions/types';
 
 const initialState = [];
 

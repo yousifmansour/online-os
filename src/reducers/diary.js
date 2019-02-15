@@ -1,4 +1,4 @@
-import {SET_SCROLL_POSITION, CLOSE_APP, SET_STATE, SET_CURRENT_WEEK} from '../actions/types';
+import {SET_SCROLL_POSITION, CLOSE_APP, SET_STATE, SET_CURRENT_WEEK} from 'actions/types';
 
 const initialState = {
     appName: 'diary',

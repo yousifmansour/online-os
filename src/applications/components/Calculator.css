@@ -8,7 +8,7 @@
     align-items: center;
     padding: 20px;
 
-    animation: come-up 0.35s ease-in-out forwards;
+    animation: app-launch 0.25s ease-in-out forwards;
 }
 
 .calculator-container form {

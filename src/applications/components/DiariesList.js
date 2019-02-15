@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './DiariesList.css';
+import 'applications/components/DiariesList.css';
 
 const DiariesList = ({diaries}) => (
     <div className='diaries-list'>

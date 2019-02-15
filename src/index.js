@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './system/components/App';
+import App from 'system/components/App';
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
 import {HashRouter} from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
-import reducer from './reducers';
+import reducer from 'reducers';
 
-import {getState} from './actions/global'
+import {getState} from 'actions/global'
 
 /* MIDDLEWARE SETUP */
 import thunk from 'redux-thunk';

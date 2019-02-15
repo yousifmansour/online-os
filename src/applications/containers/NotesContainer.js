@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import * as notesActions from '../../actions/notes';
-import {addApp} from '../../actions/recentApps';
-import Notes from '../components/Notes';
+import * as notesActions from 'actions/notes';
+import {addApp} from 'actions/recentApps';
+import Notes from 'applications/components/Notes';
 
 class NotesContainer extends React.Component {
     constructor(props) {

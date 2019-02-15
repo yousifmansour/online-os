@@ -1,4 +1,4 @@
-import {SET_SCROLL_POSITION, SET_CURRENT_WEEK} from './types';
+import {SET_SCROLL_POSITION, SET_CURRENT_WEEK} from 'actions/types';
 
 export function setScrollPosition(scrollPosition) {
     return {type: SET_SCROLL_POSITION, payload: scrollPosition};

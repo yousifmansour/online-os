@@ -1,4 +1,4 @@
-import {SET_FIRST_NUMBER, SET_RESULT, SET_SECOND_NUMBER, CLOSE_APP, SET_STATE} from '../actions/types';
+import {SET_FIRST_NUMBER, SET_RESULT, SET_SECOND_NUMBER, CLOSE_APP, SET_STATE} from 'actions/types';
 
 const initialState = {
     appName: 'calculator',

@@ -1,4 +1,4 @@
-import {SET_FIRST_NUMBER, SET_SECOND_NUMBER, SET_RESULT} from './types';
+import {SET_FIRST_NUMBER, SET_SECOND_NUMBER, SET_RESULT} from 'actions/types';
 
 export function setFirstNumber(number) {
     return {type: SET_FIRST_NUMBER, payload: number};

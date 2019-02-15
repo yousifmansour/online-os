@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import TimeAndDate from '../../applications/components/TimeAndDate';
-import './Home.css';
+import TimeAndDate from 'applications/components/TimeAndDate';
+import 'system/components/Home.css';
 
 const Home = (props) => (
     <div className='list-container'>

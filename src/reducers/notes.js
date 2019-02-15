@@ -1,4 +1,4 @@
-import {SET_NOTE, CLOSE_APP, SET_STATE} from '../actions/types';
+import {SET_NOTE, CLOSE_APP, SET_STATE} from 'actions/types';
 
 const initialState = {
     appName: 'notes',

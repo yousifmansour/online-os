@@ -1,25 +1,39 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {closeApp} from '../../actions/recentApps';
-import RecentApps from '../components/RecentApps';
+import {closeApp} from 'actions/recentApps';
+import RecentApps from 'system/components/RecentApps';
+import Hammer from 'react-hammerjs';
 
-const RecentAppsContainer = (props) => {
-    // sets up recent apps from redux state
-    const recentApps = props
-        .recentApps
-        .map((app, i) => (
-            <div key={i}>
-                <NavLink exact to={'/' + app} activeClassName="active">
-                    <h2>
-                        {app}
-                    </h2>
-                </NavLink>
-                <button onClick={() => props.closeApp(app)}>X</button>
-            </div>
-        ));
+class RecentAppsContainer extends React.Component {
+    componentWillUnmount() {
+        document
+            .querySelector('.viewport')
+            .scrollTop = 0;
+    }
 
-    return (<RecentApps recentApps={recentApps}/>);
+    render() {
+        const recentApps = this.props
+            .recentApps
+            .map((app, i) => (
+                <Hammer
+                    key={i}
+                    onSwipe={(e) => {
+                    console.log(e.deltaX);
+                    this.props.closeApp(app);
+                }}>
+                    <div>
+                        <NavLink exact to={'/' + app} activeClassName="active">
+                            <h2>
+                                {app}
+                            </h2>
+                        </NavLink>
+                        <button onClick={() => this.props.closeApp(app)}>X</button>
+                    </div>
+                </Hammer>
+            ));
+        return (<RecentApps recentApps={recentApps}/>);
+    }
 }
 
 function mapStateToProps(state) {

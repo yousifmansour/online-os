@@ -36,6 +36,7 @@
 }
 .list-container .links a:focus {
     color: black;
+    color: azure;
 }
 
 

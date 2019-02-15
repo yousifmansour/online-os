@@ -1,4 +1,4 @@
-import {SET_STATE} from './types';
+import {SET_STATE} from 'actions/types';
 
 // asynchornously gets state and calls an action that sets it, updating initial
 // redux state

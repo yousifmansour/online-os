@@ -1,5 +1,5 @@
 import React from 'react';
-import './RecentApps.css'
+import 'system/components/RecentApps.css'
 
 const RecentApps = ({recentApps}) => {
     document

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Calculator.css';
+import 'applications/components/Calculator.css';
 
 const Calculator = ({
     handleSubmit,

@@ -2,10 +2,10 @@ import React from 'react';
 import ReactHtmlParser from 'react-html-parser';
 
 import {connect} from 'react-redux';
-import * as diaryActions from '../../actions/diary';
-import {closeApp} from '../../actions/recentApps';
+import * as diaryActions from 'actions/diary';
+import {closeApp} from 'actions/recentApps';
 
-import './Diary.css';
+import 'applications/components/Diary.css';
 
 class Diary extends React.Component {
     constructor(props) {
@@ -49,7 +49,6 @@ class Diary extends React.Component {
         document
             .querySelector('.viewport')
             .scrollTop = 0;
-
     }
 
     updateScrollPosition = () => {

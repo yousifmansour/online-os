@@ -1,12 +1,12 @@
 import React from 'react';
 
 import {connect} from 'react-redux';
-import * as diaryActions from '../../actions/diary';
-import {addApp} from '../../actions/recentApps';
+import * as diaryActions from 'actions/diary';
+import {addApp} from 'actions/recentApps';
 
 import {Link} from 'react-router-dom';
 
-import DiariesList from '../components/DiariesList';
+import DiariesList from 'applications/components/DiariesList';
 
 class DiariesContainer extends React.Component {
     constructor(props) {
