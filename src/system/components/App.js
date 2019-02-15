@@ -24,7 +24,6 @@ const App = (props) => (
                 <Route exact path="/recent" component={RecentAppsContainer}/>
 
                 <Route exact path="/diaries/:currentWeek" component={Diary}/>
-
             </Switch>
         </div>
         <div className="navbar">

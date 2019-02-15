@@ -1,4 +1,5 @@
 import React from 'react';
+import {Redirect} from 'react-router-dom';
 
 import {connect} from 'react-redux';
 import * as diaryActions from 'actions/diary';
@@ -24,34 +25,41 @@ class DiariesContainer extends React.Component {
             .addApp(this.name);
 
         // get avalible weeks and show them
+
+        /* if (!this.props.currentWeek) */
         fetch('https://www.yousifmansour.space/api/online-os/diaries/').then((data) => {
             data
                 .json()
                 .then((data) => this.setState({avalibleWeeks: data}));
         });
-
-        // when on of them is clicked, update redux with current chosed diary name then
-        // show a Diary component with that name passed down as aprops
     }
 
     render() {
-        let diaries = this
-            .state
-            .avalibleWeeks
-            .map((week) => {
-                week = week.substring(0, week.indexOf('.html'));
-                return (
-                    <div key={week}>
-                        <Link to={'/diaries/' + week} onClick={() => this.props.setCurrentWeek(week)}>
-                            <h2 className='diary'>
-                                {week}
-                            </h2>
-                        </Link>
-                    </div>
+        if (this.props.currentWeek && 0) {
+            // render opened week
+            return (
+                <Redirect to={"/diaries/" + this.props.currentWeek}></Redirect>
+            );
+        } else {
+            // setup diaries list
+            let diaries = this
+                .state
+                .avalibleWeeks
+                .map((week) => {
+                    week = week.substring(0, week.indexOf('.html'));
+                    return (
+                        <div key={week}>
+                            <Link to={'/diaries/' + week} onClick={() => this.props.setCurrentWeek(week)}>
+                                <h2 className='diary'>
+                                    {week}
+                                </h2>
+                            </Link>
+                        </div>
 
-                );
-            });
-        return (<DiariesList diaries={diaries}/>);
+                    );
+                });
+            return (<DiariesList diaries={diaries}/>);
+        }
     }
 }
 
