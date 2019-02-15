@@ -7,7 +7,7 @@ import {addApp} from 'actions/recentApps';
 
 import {Link} from 'react-router-dom';
 
-import DiariesList from 'applications/components/DiariesList';
+import DiariesList from 'user/components/DiariesList';
 
 class DiariesContainer extends React.Component {
     constructor(props) {

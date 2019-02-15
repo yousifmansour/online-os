@@ -3,10 +3,10 @@ import {Route, Switch} from 'react-router-dom';
 import Home from 'system/components/Home';
 import RecentAppsContainer from 'system/containers/RecentAppsContainer';
 import RecentAppsBar from 'system/components/RecentAppsBar';
-import CalculatorContainer from 'applications/containers/CalculatorContainer';
-import NotesContainer from 'applications/containers/NotesContainer';
-import DiariesContainer from 'applications/containers/DiariesContainer';
-import Diary from 'applications/components/Diary';
+import CalculatorContainer from 'user/containers/CalculatorContainer';
+import NotesContainer from 'user/containers/NotesContainer';
+import DiariesContainer from 'user/containers/DiariesContainer';
+import Diary from 'user/components/Diary';
 
 import 'system/components/App.css';
 import 'system/components/Animations.css';

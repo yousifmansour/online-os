@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import TimeAndDate from 'applications/components/TimeAndDate';
+import TimeAndDate from 'user/components/TimeAndDate';
 import 'system/components/Home.css';
 
 const Home = (props) => (
