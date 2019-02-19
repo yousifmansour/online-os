@@ -2,7 +2,7 @@ import React from 'react';
 import {NavLink} from 'react-router-dom';
 import {withRouter} from "react-router";
 
-import 'system/components/RecentAppsBar.css';
+import 'system/RecentAppsBar/components/RecentAppsBar.css';
 
 const RecentAppsBar = ({history}) => (
     <div className='recent-bar'>

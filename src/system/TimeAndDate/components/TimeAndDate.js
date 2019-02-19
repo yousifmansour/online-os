@@ -1,5 +1,5 @@
 import React from 'react';
-import 'user/components/TimeAndDate.css';
+import 'system/TimeAndDate/components/TimeAndDate.css';
 
 const TimeAndDate = () => {
     let date = new Date();

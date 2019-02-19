@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import * as diaryActions from 'actions/diary';
 import {closeApp} from 'actions/recentApps';
 
-import 'user/components/Diary.css';
+import 'user/Diaries/components/Diary.css';
 
 class Diary extends React.Component {
     constructor(props) {

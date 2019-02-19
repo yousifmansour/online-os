@@ -1,15 +1,15 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
-import Home from 'system/components/Home';
-import RecentAppsContainer from 'system/containers/RecentAppsContainer';
-import RecentAppsBar from 'system/components/RecentAppsBar';
-import CalculatorContainer from 'user/containers/CalculatorContainer';
-import NotesContainer from 'user/containers/NotesContainer';
-import DiariesContainer from 'user/containers/DiariesContainer';
-import Diary from 'user/components/Diary';
+import Home from 'system/Home/components/Home';
+import RecentAppsContainer from 'system/RecentApps/containers/RecentAppsContainer';
+import RecentAppsBar from 'system/RecentAppsBar/components/RecentAppsBar';
+import CalculatorContainer from 'user/Calculator/containers/CalculatorContainer';
+import NotesContainer from 'user/Notes/containers/NotesContainer';
+import DiariesContainer from 'user/Diaries/containers/DiariesContainer';
+import Diary from 'user/Diaries/components/Diary';
 
-import 'system/components/App.css';
-import 'system/components/Animations.css';
+import 'system/App.css';
+import 'system/Animations.css';
 
 const App = (props) => (
     <div className="App">

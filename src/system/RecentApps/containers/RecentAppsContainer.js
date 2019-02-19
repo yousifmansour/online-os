@@ -2,7 +2,7 @@ import React from 'react';
 import {NavLink} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {closeApp} from 'actions/recentApps';
-import RecentApps from 'system/components/RecentApps';
+import RecentApps from 'system/RecentApps/components/RecentApps';
 import Hammer from 'react-hammerjs';
 
 class RecentAppsContainer extends React.Component {
@@ -13,15 +13,17 @@ class RecentAppsContainer extends React.Component {
     }
 
     render() {
-        const recentApps = this.props
+        const recentApps = this
+            .props
             .recentApps
             .map((app, i) => (
                 <Hammer
                     key={i}
                     onSwipe={(e) => {
                     console.log(e.deltaX);
-                    this.props.closeApp(app);
-                }}>
+                    if (+ e.deltaX < -window.innerWidth/2 || + e.deltaX > window.innerWidth/2) 
+                        this.props.closeApp(app);
+                    }}>
                     <div>
                         <NavLink exact to={'/' + app} activeClassName="active">
                             <h2>
