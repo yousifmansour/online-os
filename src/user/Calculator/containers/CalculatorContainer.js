@@ -4,6 +4,8 @@ import * as calculatorActions from 'actions/calculator';
 import {addApp} from 'actions/recentApps';
 import Calculator from 'user/Calculator/components/Calculator';
 
+import calculate from "../logic/calculate";
+
 class CalculatorContainer extends React.Component {
     constructor(props) {
         super(props);
@@ -16,16 +18,27 @@ class CalculatorContainer extends React.Component {
             .addApp(this.name);
     }
 
-    // handleSubmit = (e) => {     e.preventDefault();     const result =
-    // +this.props.firstNumber + + this.props.secondNumber;     this         .props
-    //        .setResult(result); }
-
-    // handleClick = buttonName => {
-    //     this.setState(calculate(this.state, buttonName));
-    // };
+    handleChange = buttonName => {
+        let newCalculatorState = calculate({
+            total: this.props.total,
+            next: this.props.next,
+            operation: this.props.operation
+        }, buttonName);
+        this
+            .props
+            .setTotal(newCalculatorState.total);
+        this
+            .props
+            .setNext(newCalculatorState.next);
+        this
+            .props
+            .setOperation(newCalculatorState.operation);
+    };
 
     render() {
-        return (<Calculator value={0} clickHandler={() => null}/>);
+        return (<Calculator
+            value={this.props.next || this.props.total || "0"}
+            handleChange={this.handleChange}/>);
     }
 }
 

@@ -1,31 +1,31 @@
-import {SET_FIRST_NUMBER, SET_RESULT, SET_SECOND_NUMBER, CLOSE_APP, SET_STATE} from 'actions/types';
+import {SET_TOTAL, SET_NEXT, SET_OPERATION, CLOSE_APP, SET_STATE} from 'actions/types';
 
 const initialState = {
     appName: 'calculator',
-    firstNumber: '',
-    secondNumber: '',
-    result: ''
+    total: null,
+    next: null,
+    operation: null
 };
 
 export default function calculator(state = initialState, action) {
     switch (action.type) {
 
-        case SET_FIRST_NUMBER:
+        case SET_TOTAL:
             return {
                 ...state,
-                firstNumber: action.payload
+                total: action.payload
             };
 
-        case SET_SECOND_NUMBER:
+        case SET_NEXT:
             return {
                 ...state,
-                secondNumber: action.payload
+                next: action.payload
             };
 
-        case SET_RESULT:
+        case SET_OPERATION:
             return {
                 ...state,
-                result: action.payload
+                operation: action.payload
             };
 
         case CLOSE_APP:

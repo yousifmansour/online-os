@@ -8,7 +8,7 @@ class ButtonPanel extends React.Component {
     handleClick = buttonName => {
         this
             .props
-            .clickHandler(buttonName);
+            .handleChange(buttonName);
     };
 
     render() {
@@ -48,6 +48,6 @@ class ButtonPanel extends React.Component {
     }
 }
 ButtonPanel.propTypes = {
-    clickHandler: PropTypes.func
+    handleChange: PropTypes.func
 };
 export default ButtonPanel;

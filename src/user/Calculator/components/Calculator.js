@@ -5,10 +5,10 @@ import Display from './Display';
 
 import './Calculator.css';
 
-const Calculator = ({value, clickHandler}) => (
+const Calculator = ({value, handleChange}) => (
     <div className='calculator-container'>
         <Display value={value}/>
-        <ButtonPanel clickHandler={clickHandler}/>
+        <ButtonPanel handleChange={handleChange}/>
     </div>
 );
 
