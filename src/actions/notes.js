@@ -16,7 +16,6 @@ export function loadNotesFromDB() {
         fetch(url + '/notes').then((data) => {
             return data.json();
         }).then((data) => {
-            console.log(data.notes);
             dispatch({
                 type: LOAD_NOTES_FROM_DB,
                 payload: {

@@ -27,12 +27,13 @@ export default function notes(state = initialState, action) {
                 id: state.nextID
             };
             let nextID = state.nextID + 1;
+            let notes = [];
+            if (state.notes) 
+                notes = state.notes;
+            notes.push(newNote);
             return {
                 ...state,
-                notes: [
-                    ...state.notes,
-                    newNote
-                ],
+                notes,
                 nextID
             };
 
