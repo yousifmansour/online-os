@@ -1,14 +1,16 @@
 .component-display {
-    background-color: #858694;
-    color: white;
+    background-color: white;
+    color: #3f3f3f;
     text-align: right;
     font-weight: 200;
-    flex: 0 0 auto;
     width: 100%;
-  }
-  
-  .component-display > div {
+    min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.component-display > div {
     font-size: 5rem;
-    padding: 0.2rem 0.7rem 0.1rem 0.5rem;
-  }
-  
+    /* padding: 0.2rem 0.7rem 0.1rem 0.5rem; */
+}

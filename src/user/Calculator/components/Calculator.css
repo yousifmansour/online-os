@@ -1,12 +1,11 @@
 .calculator-container {
     display: flex;
     flex-direction: column;
-    background-color: white;
     min-height: 50vh;
-    border-radius: 8px;
     align-items: center;
     /* padding: 20px; */
     height: 100%;
+    background-color: black;
     animation: app-launch 0.25s ease-in-out forwards;
 }
 
