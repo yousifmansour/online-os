@@ -1,11 +1,11 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import TimeAndDate from 'system/TimeAndDate/components/TimeAndDate';
+import TimeAndDateContainer from 'system/TimeAndDate/containers/TimeAndDateContainer';
 import 'system/Home/components/Home.css';
 
 const Home = (props) => (
     <div className='list-container'>
-        <TimeAndDate/>
+        <TimeAndDateContainer/>
         <div className='links'>
             <NavLink exact to="/calculator" activeClassName="active">
                 Calculator

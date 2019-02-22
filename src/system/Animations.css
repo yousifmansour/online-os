@@ -1,20 +1,15 @@
 @keyframes come-up {
     0% {
-        opacity: 0;
         transform: translateY(100vh);
         overflow: hidden;
     }
-    74% {
+    99% {
         /* might not be needed */
         overflow: hidden;
     }
-    75% {
-        opacity: 0;
+    100% {
         transform: translateY(000px);
         overflow: auto;
-    }
-    100% {
-        opacity: 1;
     }
 }
 @keyframes scale-down {
@@ -22,9 +17,7 @@
         /* opacity: 0; */
         transform: scale(1.2);
     }
-    75% {
-        
-    }
+
     100% {
         /* opacity: 1; */
         transform: scale(1);

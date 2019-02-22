@@ -13,8 +13,8 @@ import {getState} from 'actions/global'
 import thunk from 'redux-thunk';
 import io from 'socket.io-client';
 import createSocketIoMiddleware from 'redux-socket.io';
-// let socket = io('http://localhost:5000');
-let socket = io('https://www.yousifmansour.space:5000');
+let socket = io('http://localhost:5000');
+// let socket = io('https://www.yousifmansour.space:5000');
 
 // will emit aciton if it's not from server
 let socketIoMiddleware = createSocketIoMiddleware(socket, (type, action) => !action.fromServer);
@@ -24,6 +24,7 @@ const persistToServer = store => next => action => {
     let result = next(action);
     if (!action.fromServer) 
         socket.emit('update state', store.getState());
+    
     return result;
 };
 /* MIDDLEWARE SETUP */

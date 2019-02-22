@@ -1,18 +1,47 @@
-import {SET_NOTE, CLOSE_APP, SET_STATE} from 'actions/types';
+import {SET_NOTE, CREATE_NOTE, LOAD_NOTES_FROM_DB, CLOSE_APP, SET_STATE} from 'actions/types';
 
 const initialState = {
     appName: 'notes',
-    note: ''
+    notes: null,
+    nextID: null
 };
 
-export default function calculator(state = initialState, action) {
+export default function notes(state = initialState, action) {
     switch (action.type) {
-
         case SET_NOTE:
+            /* this will create new note if this was not an update action */
+            /* and will update if a note with the same id exists */
             return {
                 ...state,
-                note: action.payload
+                notes: [
+                    ...state
+                        .notes
+                        .filter((note) => note.id !== action.payload.id),
+                    action.payload
+                ]
             };
+
+        case CREATE_NOTE:
+            let newNote = {
+                text: '',
+                id: state.nextID
+            };
+            let nextID = state.nextID + 1;
+            return {
+                ...state,
+                notes: [
+                    ...state.notes,
+                    newNote
+                ],
+                nextID
+            };
+
+        case LOAD_NOTES_FROM_DB:
+            return {
+                ...state,
+                notes: action.payload.notes,
+                nextID: action.payload.nextID
+            }
 
         case CLOSE_APP:
             if (state.appName === action.payload) 

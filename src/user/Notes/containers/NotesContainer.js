@@ -11,13 +11,18 @@ class NotesContainer extends React.Component {
     }
 
     componentDidMount() {
+        // if (!this.props.notes) 
+            this.props.loadNotesFromDB();
         this
             .props
             .addApp(this.name);
     }
 
     render() {
-        return (<Notes note={this.props.note} setNote={this.props.setNote}/>);
+        return (<Notes
+            notes={this.props.notes}
+            setNote={this.props.setNote}
+            createNote={this.props.createNote}/>);
     };
 }
 
