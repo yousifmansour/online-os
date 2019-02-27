@@ -1,4 +1,4 @@
-import {SET_NOTE, CREATE_NOTE, LOAD_NOTES_FROM_DB} from 'actions/types';
+import {SET_NOTE, CREATE_NOTE, LOAD_NOTES_FROM_DB, DELETE_NOTE_FROM_DB} from 'actions/types';
 
 export function setNote(note) {
     return {type: SET_NOTE, payload: note};
@@ -6,6 +6,10 @@ export function setNote(note) {
 
 export function createNote() {
     return {type: CREATE_NOTE};
+}
+
+export function deleteNote(noteID) {
+    return {type: DELETE_NOTE_FROM_DB, payload: noteID}
 }
 
 export function loadNotesFromDB() {

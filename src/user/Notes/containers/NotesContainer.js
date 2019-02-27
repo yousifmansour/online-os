@@ -22,7 +22,8 @@ class NotesContainer extends React.Component {
         return (<Notes
             notes={this.props.notes}
             setNote={this.props.setNote}
-            createNote={this.props.createNote}/>);
+            createNote={this.props.createNote}
+            deleteNote={this.props.deleteNote}/>);
     };
 }
 

@@ -14,6 +14,7 @@ export const SET_OPERATION = 'set_operation';
 export const SET_NOTE = 'set_note';
 export const CREATE_NOTE = 'create_note';
 export const LOAD_NOTES_FROM_DB = 'load_notes_from_db';
+export const DELETE_NOTE_FROM_DB = 'delete_note_from_db';
 
 // diary aciton types
 export const SET_SCROLL_POSITION = 'set_scroll_position';

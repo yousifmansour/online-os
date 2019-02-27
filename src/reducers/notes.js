@@ -1,4 +1,11 @@
-import {SET_NOTE, CREATE_NOTE, LOAD_NOTES_FROM_DB, CLOSE_APP, SET_STATE} from 'actions/types';
+import {
+    SET_NOTE,
+    CREATE_NOTE,
+    LOAD_NOTES_FROM_DB,
+    CLOSE_APP,
+    SET_STATE,
+    DELETE_NOTE_FROM_DB
+} from 'actions/types';
 
 const initialState = {
     appName: 'notes',
@@ -42,6 +49,14 @@ export default function notes(state = initialState, action) {
                 ...state,
                 notes: action.payload.notes,
                 nextID: action.payload.nextID
+            }
+
+        case DELETE_NOTE_FROM_DB:
+            return {
+                ...state,
+                notes: state
+                    .notes
+                    .filter((note) => note.id !== action.payload)
             }
 
         case CLOSE_APP:
