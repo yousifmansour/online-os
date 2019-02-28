@@ -15,7 +15,8 @@ export const SET_NOTE = 'set_note';
 export const CREATE_NOTE = 'create_note';
 export const LOAD_NOTES_FROM_DB = 'load_notes_from_db';
 export const DELETE_NOTE_FROM_DB = 'delete_note_from_db';
+export const SET_SELECTED_NOTEID = 'set_selected_noteid';
 
-// diary aciton types
+// diary action types
 export const SET_SCROLL_POSITION = 'set_scroll_position';
 export const SET_CURRENT_WEEK = 'set_current_week';

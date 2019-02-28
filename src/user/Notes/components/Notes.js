@@ -1,15 +1,12 @@
 import React from 'react';
 import 'user/Notes/components/Notes.css';
 
-const Notes = ({notes, setNote, createNote, deleteNote}) => {
+const Notes = ({notes, createNote, deleteNote, setSelectedNoteID}) => {
     let listOfNotes;
     if (notes) {
         listOfNotes = notes.sort((a, b) => a.id - b.id).map((note, i) => (
-            <div key={i}>
-                <textarea
-                    className='note'
-                    value={note.text}
-                    onChange={(e) => setNote({id: note.id, text: e.target.value})}></textarea>
+            <div key={i} onClick={() => setSelectedNoteID(note.id)}>
+                <span className='note'>{note.text}</span>
                 <button className='delete-button' onClick={() => deleteNote(note.id)}>X</button>
             </div>
         ));

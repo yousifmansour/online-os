@@ -4,12 +4,14 @@ import {
     LOAD_NOTES_FROM_DB,
     CLOSE_APP,
     SET_STATE,
-    DELETE_NOTE_FROM_DB
+    DELETE_NOTE_FROM_DB,
+    SET_SELECTED_NOTEID
 } from 'actions/types';
 
 const initialState = {
     appName: 'notes',
     notes: null,
+    selectedNoteID: null,
     nextID: null
 };
 
@@ -51,9 +53,23 @@ export default function notes(state = initialState, action) {
                 nextID: action.payload.nextID
             }
 
+        case SET_SELECTED_NOTEID:
+            if (state.notes.filter(note => note.id === action.payload).length === 1) 
+                return {
+                    ...state,
+                    selectedNoteID: action.payload
+                }
+            else 
+                return state;
+            
         case DELETE_NOTE_FROM_DB:
+            let selectedNoteID = state.selectedNoteID;
+            if (action.payload === state.selectedNoteID) 
+                selectedNoteID = null;
+            
             return {
                 ...state,
+                selectedNoteID,
                 notes: state
                     .notes
                     .filter((note) => note.id !== action.payload)

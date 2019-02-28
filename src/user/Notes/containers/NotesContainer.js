@@ -1,29 +1,32 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Redirect} from 'react-router-dom';
+
 import * as notesActions from 'actions/notes';
 import {addApp} from 'actions/recentApps';
 import Notes from 'user/Notes/components/Notes';
 
 class NotesContainer extends React.Component {
-    constructor(props) {
-        super(props);
-        this.name = 'notes';
-    }
-
     componentDidMount() {
         this
             .props
-            .addApp(this.name);
+            .addApp(this.props.appName);
     }
 
     render() {
-        if (!this.props.notes) 
-            this.props.loadNotesFromDB();
-        return (<Notes
-            notes={this.props.notes}
-            setNote={this.props.setNote}
-            createNote={this.props.createNote}
-            deleteNote={this.props.deleteNote}/>);
+        // if there is an open note, redirect to it if not show the notes list
+        if (this.props.selectedNoteID) 
+            return (<Redirect to={"/note"}/>);
+        else {
+            if (!this.props.notes) 
+                this.props.loadNotesFromDB();
+            return (<Notes
+                notes={this.props.notes}
+                createNote={this.props.createNote}
+                deleteNote={this.props.deleteNote}
+                setSelectedNoteID={this.props.setSelectedNoteID}/>);
+        }
+
     };
 }
 

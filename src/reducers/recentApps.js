@@ -6,7 +6,7 @@ export default function recentApps(state = initialState, action) {
     switch (action.type) {
         case ADD_APP:
             // add running apps only once
-            if (!state.includes(action.payload)) 
+            if (action.payload && !state.includes(action.payload)) 
                 return [
                     ...state,
                     action.payload
