@@ -25,6 +25,7 @@ class NotePageContainer extends React.Component {
             return (<NotePage
                 {...selectedNote}
                 setNote={this.props.setNote}
+                resetSelectedNote={this.props.resetSelectedNote}
                 deleteNote=
                 {() => this.props.deleteNote(this.props.selectedNoteID)}/>);
         }

@@ -15,7 +15,6 @@ const RecentAppsBar = ({history}) => (
         <NavLink exact to="/recent" activeClassName="active">
             <i className="far fa-square"></i>
         </NavLink>
-
     </div>
 );
 

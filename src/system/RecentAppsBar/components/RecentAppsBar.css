@@ -20,6 +20,7 @@
 .recent-bar button {
     border: none;
     outline: 0;
+    cursor: pointer;
 }
 
 .recent-bar a,

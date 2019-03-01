@@ -1,4 +1,11 @@
-import {SET_NOTE, CREATE_NOTE, LOAD_NOTES_FROM_DB, DELETE_NOTE_FROM_DB, SET_SELECTED_NOTEID} from 'actions/types';
+import {
+    SET_NOTE,
+    CREATE_NOTE,
+    LOAD_NOTES_FROM_DB,
+    DELETE_NOTE_FROM_DB,
+    SET_SELECTED_NOTEID,
+    RESET_SELECTED_NOTE
+} from 'actions/types';
 
 export function setNote(note) {
     return {type: SET_NOTE, payload: note};
@@ -14,6 +21,10 @@ export function deleteNote(noteID) {
 
 export function setSelectedNoteID(noteID) {
     return {type: SET_SELECTED_NOTEID, payload: noteID};
+}
+
+export function resetSelectedNote() {
+    return {type: RESET_SELECTED_NOTE};
 }
 
 export function loadNotesFromDB() {

@@ -1,17 +1,36 @@
 import React from 'react';
-// import './NotePage.css';
+import {withRouter} from "react-router";
+
+import './NotePage.css';
 import 'user/Notes/components/Notes.css';
 
-const NotePage = ({text, id, deleteNote, setNote}) => (
-    <div className='notes-component'>
+const NotePage = ({
+    text,
+    id,
+    deleteNote,
+    setNote,
+    history,
+    resetSelectedNote
+}) => (
+    <div className='note-page-component'>
         <div>
-            <textarea
-                autoFocus={true}
-                className='note'
-                value={text}
-                onChange={(e) => setNote({id, text: e.target.value})}></textarea>
-            <button className='delete-button' onClick={deleteNote}>X</button>
+            <button
+                onClick={() => {
+                resetSelectedNote();
+                history.push('/notes')
+            }}>
+
+                <i className="fas fa-2x fa-chevron-left"></i>
+            </button>
         </div>
+
+        <textarea
+            className='note'
+            autoFocus={true}
+            value={text}
+            onChange={(e) => setNote({id, text: e.target.value})}></textarea>
+        <button className='delete-button' onClick={deleteNote}>X</button>
+
     </div>
 );
-export default NotePage;
+export default withRouter(NotePage);

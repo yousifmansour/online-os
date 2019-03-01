@@ -5,47 +5,87 @@
     max-width: 100vw;
     min-height: 100%;
     align-items: center;
-    /* margin: 20px; */
     animation: app-launch 0.25s ease-in-out forwards;
 }
 
-.notes-component div {
-    display: flex;
-    border-radius: 8px;
-    border: 1rem solid#fff740;
-    background-color: #feff9c;
-    margin: 1rem;
-    /* animation: come-up 0.25s ease-in-out forwards; */
-}
-
-.notes-component .delete-button {
-    align-self: flex-start;
-    margin: 4px;
-    background-color: black;
-    border: none;
-    outline: none;
-    color: white;
-    border-radius: 8px;
-    font-size: 18px;
-}
-
-.notes-component h2 {
+.notes-component .cards-contaienr h2 {
     color: black;
     text-underline-position: below;
     font-size: 2rem;
 }
 
-.notes-component .note {
+.cards-container {
+    margin-top: 1rem;
+    max-width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.notes-component .cards-column {
+    flex-basis: 40%;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 1rem;
+}
+
+.notes-component .card {
+    display: flex;
+    border-radius: 8px;
+    border: 4px solid#fcf126;
+    background-color: #feff9c;
+    box-shadow: 0 -8px #fff201;
+    /* animation: come-up 0.25s ease-in-out forwards; */
+    flex-basis: 40%;
+    width: 40vw;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.notes-component .card:hover{
+    opacity: 0.9;
+}
+
+.notes-component .card .note {
+    overflow: hidden;
+    display: inline-block;
     font-family: 'Open Sans', sans-serif;
-    font-size: 1.2rem;
-    min-width: 70vw;
-    min-height: 40vh;
+    font-size: 1rem;
+    min-height: 5vh;
+    max-height: 60vh;
     background-color: #feff9c;
     color: #383500;
-    padding: 4px;
     outline: none;
     resize: none;
     border: none;
+    flex-basis: 90%;
+    width: 100%;
+    word-wrap: break-word;
+    cursor: pointer;
+}
+
+.notes-component .delete-button {
+    flex-basis: 10%;
+    width: 100%;
+    align-self: flex-start;
+    /* margin: 4px; */
+    background-color: rgb(65, 65, 65);
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.notes-component .delete-button:hover {
+    background-color: black;
+}
+.notes-component .delete-button:active {
+    background-color: black;
 }
 
 .notes-component .new-note {

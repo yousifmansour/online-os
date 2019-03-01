@@ -5,7 +5,9 @@ import {
     CLOSE_APP,
     SET_STATE,
     DELETE_NOTE_FROM_DB,
-    SET_SELECTED_NOTEID
+    SET_SELECTED_NOTEID,
+    RESET_SELECTED_NOTE
+
 } from 'actions/types';
 
 const initialState = {
@@ -62,6 +64,12 @@ export default function notes(state = initialState, action) {
             else 
                 return state;
             
+        case RESET_SELECTED_NOTE:
+            return {
+                ...state,
+                selectedNoteID: null
+            }
+
         case DELETE_NOTE_FROM_DB:
             let selectedNoteID = state.selectedNoteID;
             if (action.payload === state.selectedNoteID) 
