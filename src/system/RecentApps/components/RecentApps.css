@@ -13,12 +13,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* overflow-y: scroll; */
     min-height: 140vh;
+    animation: come-up 0.35s ease-in-out forwards;
 }
 
 .recent-apps .links div {
-    /* flex-basis: 30vh; */
     height: 45vh;
     min-width: 80vw;
     text-decoration: none;
@@ -32,8 +31,6 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-
-    animation: come-up 0.35s ease-in-out forwards;
 }
 
 .recent-apps .links div a {
