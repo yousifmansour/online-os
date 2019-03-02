@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {closeApp} from 'actions/recentApps';
-import RecentApps from 'system/RecentApps/components/RecentApps';
+import RecentAppsList from 'system/RecentApps/components/RecentAppsList';
 
 class RecentAppsContainer extends React.Component {
     componentWillUnmount() {
@@ -11,7 +11,7 @@ class RecentAppsContainer extends React.Component {
     }
 
     render() {
-        return (<RecentApps recentApps={this.props.recentApps} closeApp={this.props.closeApp}/>);
+        return (<RecentAppsList recentApps={this.props.recentApps} closeApp={this.props.closeApp}/>);
     }
 }
 

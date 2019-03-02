@@ -1,0 +1,24 @@
+.recent-app-item {
+    height: 45vh;
+    min-width: 80vw;
+    text-decoration: none;
+    background-color: white;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.recent-app-item a {
+    font-size: 20px;
+    width: 80%;
+
+}
+.recent-app-item:hover {
+    background-color: whitesmoke;
+}

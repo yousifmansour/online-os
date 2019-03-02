@@ -1,0 +1,18 @@
+.recent-apps {
+    min-width: 99vw;
+    max-width: 100vh;
+    min-height: 100%;
+    background-color: rgb(255, 112, 112);
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+.recent-apps .links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 140vh;
+    animation: come-up 0.35s ease-in-out forwards;
+}
