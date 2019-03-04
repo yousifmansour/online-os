@@ -64,7 +64,7 @@ class RecentAppItem extends React.Component {
                             {this.props.app}
                         </h2>
                     </NavLink>
-                    <button onClick={this.props.closeApp}>X</button>
+                    <button class='close-app-button' onClick={this.props.closeApp}>X</button>
                 </div>
             </Draggable>
         );

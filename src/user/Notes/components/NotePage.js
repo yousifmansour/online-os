@@ -19,18 +19,18 @@ const NotePage = ({
                 resetSelectedNote();
                 history.push('/notes')
             }}>
-
                 <i className="fas fa-2x fa-chevron-left"></i>
             </button>
         </div>
 
-        <textarea
-            className='note'
-            autoFocus={true}
-            value={text}
-            onChange={(e) => setNote({id, text: e.target.value})}></textarea>
-        <button className='delete-button' onClick={deleteNote}>X</button>
-
+        <div className='card'>
+            <textarea
+                className='note'
+                autoFocus={true}
+                value={text}
+                onChange={(e) => setNote({id, text: e.target.value})}></textarea>
+            <button className='delete-button' onClick={deleteNote}>X</button>
+        </div>
     </div>
 );
 export default withRouter(NotePage);

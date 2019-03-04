@@ -9,15 +9,26 @@
 
     text-align: center;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    /* flex-direction: column; */
+    /* justify-content: space-around; */
     align-items: center;
+    border-radius: 8px;
+}
+
+.recent-app-item .close-app-button{
+    border: none;
+    outline: none;
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+    font-size: 20px;
 }
 
 .recent-app-item a {
     font-size: 20px;
     width: 80%;
-
+    text-decoration: none;
+    color: black;
 }
 .recent-app-item:hover {
     background-color: whitesmoke;

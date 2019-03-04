@@ -39,7 +39,7 @@
     border: 4px solid#fcf126;
     background-color: #feff9c;
     box-shadow: 0 -8px #fff201;
-    /* animation: come-up 0.25s ease-in-out forwards; */
+    animation: fade-in 0.25s ease-in-out forwards;
     flex-basis: 40%;
     width: 40vw;
     margin-top: 1rem;
