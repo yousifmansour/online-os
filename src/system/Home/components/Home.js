@@ -18,6 +18,10 @@ const Home = (props) => (
             <NavLink exact to="/diaries" activeClassName="active">
                 Diaries
             </NavLink>
+
+            <NavLink exact to="/files" activeClassName="active">
+                Files
+            </NavLink>
         </div>
     </div>
 );

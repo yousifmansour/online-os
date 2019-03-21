@@ -21,3 +21,8 @@ export const RESET_SELECTED_NOTE = 'reset_selected_note';
 // diary action types
 export const SET_SCROLL_POSITION = 'set_scroll_position';
 export const SET_CURRENT_WEEK = 'set_current_week';
+
+// files action types
+export const LOAD_FILES_FOLDERS_DATA = 'load_files_folders_data';
+export const NAVIGATE_TO_FOLDER = 'navigate_to_folder';
+export const NAVIGATE_BACK = 'navigate_back';

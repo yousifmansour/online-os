@@ -8,6 +8,7 @@ import NotesContainer from 'user/Notes/containers/NotesContainer';
 import NotePageContainer from 'user/Notes/containers/NotePageContainer';
 import DiariesContainer from 'user/Diaries/containers/DiariesContainer';
 import Diary from 'user/Diaries/components/Diary';
+import FilesAppContainer from 'user/Files/containers/FilesAppContainer';
 
 import 'system/App.css';
 import 'system/Animations.css';
@@ -26,6 +27,9 @@ const App = (props) => (
                 <Route exact path="/diaries" component={DiariesContainer}/>
 
                 <Route exact path="/diaries/:currentWeek" component={Diary}/>
+
+                <Route exact path="/files" component={FilesAppContainer}/>
+
             </Switch>
         </div>
         <div className="navbar">

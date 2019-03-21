@@ -26,7 +26,6 @@ class NotesContainer extends React.Component {
                 deleteNote={this.props.deleteNote}
                 setSelectedNoteID={this.props.setSelectedNoteID}/>);
         }
-
     };
 }
 

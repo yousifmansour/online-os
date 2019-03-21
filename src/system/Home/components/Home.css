@@ -19,8 +19,8 @@
 }
 
 .list-container .links a {
-    flex-basis: 30%;
-    min-width: 25vw;
+    flex-basis: 20%;
+    min-width: 20vw;
     font-size: 20px;
     height: 15vh;
     text-decoration: none;

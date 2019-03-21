@@ -28,7 +28,7 @@ export function resetSelectedNote() {
 }
 
 export function loadNotesFromDB() {
-    // this needs to load notes (if any) and nextID and populate the state
+    // this load notes (if any) and nextID and populate the state
     return (dispatch) => {
         // let url = 'http://localhost:5000';
         let url = 'https://www.yousifmansour.space/api/online-os';
