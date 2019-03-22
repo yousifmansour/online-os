@@ -26,3 +26,6 @@ export const SET_CURRENT_WEEK = 'set_current_week';
 export const LOAD_FILES_FOLDERS_DATA = 'load_files_folders_data';
 export const NAVIGATE_TO_FOLDER = 'navigate_to_folder';
 export const NAVIGATE_BACK = 'navigate_back';
+export const UPLOAD_PROGRESS = 'upload_progress';
+export const STARTED_UPLOAD = 'started_upload';
+export const FINISHED_UPLOAD = 'finished_upload';
