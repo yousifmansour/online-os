@@ -1,9 +1,8 @@
 import React from 'react';
-import axios from 'axios';
 
 import {ContextMenu, MenuItem, ContextMenuTrigger} from "react-contextmenu";
 
-// import './FolderComponent.css';
+import './FolderComponent.css';
 
 class FolderComponent extends React.Component {
     constructor(props) {
@@ -27,18 +26,6 @@ class FolderComponent extends React.Component {
                 folderName: newName
             }, () => this.setState({renaming: false}));
         }
-    
-    // action
-    deleteFolder = () => {
-        let path = this.props.path;
-        let folder = this.props.folder;
-
-        axios.delete('http://localhost:8000/delete', {
-            data: {
-                path: path.join('/') + '/' + folder.name
-            }
-        }).catch(err => alert(err));
-    }
 
     render() {
         let folderNameField;
@@ -57,7 +44,7 @@ class FolderComponent extends React.Component {
         
         return (
             <div className='folder-component'>
-                <div onClick={this.props.addToPath}>
+                <div onClick={this.props.navigateToFolder}>
                     <ContextMenuTrigger
                         id={this
                         .props
@@ -88,7 +75,7 @@ class FolderComponent extends React.Component {
                         </div>
                     </MenuItem>
 
-                    <MenuItem onClick={() => this.deleteFolder()}>
+                    <MenuItem onClick={() => this.props.deleteFolder()}>
                         <div
                             className='context-menu-item'
                             style={{

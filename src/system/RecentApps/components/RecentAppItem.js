@@ -22,18 +22,18 @@ class RecentAppItem extends React.Component {
                 this.setState({mode: 'vertical'});
             }
         
-        if (this.state.mode == 'vertical') {
+        if (this.state.mode === 'vertical') {
             this.setState({
                 x: 0,
                 axis: 'y'
             }, () => document.querySelector('.viewport').scrollTop -= position.y);
-        } else if (this.state.mode == 'horizontal') 
+        } else if (this.state.mode === 'horizontal') 
             this.setState({x: position.x});
         }
     
     handleStop = (e, position) => {
         this.setState({mode: null});
-        if (position.x > 0 && position.x > window.innerWidth / 2 || position.x < 0 && position.x < -window.innerWidth / 2) {
+        if ((position.x > 0 && position.x > window.innerWidth / 2) || (position.x < 0 && position.x < -window.innerWidth / 2)) {
             this.setState({
                 x: position.x,
                 axis: 'x'
@@ -64,7 +64,7 @@ class RecentAppItem extends React.Component {
                             {this.props.app}
                         </h2>
                     </NavLink>
-                    <button class='close-app-button' onClick={this.props.closeApp}>X</button>
+                    <button className='close-app-button' onClick={this.props.closeApp}>X</button>
                 </div>
             </Draggable>
         );

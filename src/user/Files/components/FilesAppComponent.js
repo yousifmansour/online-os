@@ -1,8 +1,10 @@
 import React from 'react';
 import Dropzone from 'react-dropzone';
 
-import FileListContainer from 'user/Files/containers/FileListContainer';
-import FilesNavbarContainer from 'user/Files/containers/FilesNavbarContainer';
+import FilesNavbarComponent from 'user/Files/components/FilesNavbarComponent';
+import FileListContainer from 'user/Files/containers/FileListContainer'
+
+import './FilesAppComponent.css';
 
 class FilesAppComponent extends React.Component {
     constructor(props) {
@@ -28,21 +30,29 @@ class FilesAppComponent extends React.Component {
 
     render() {
         return (
-            <Dropzone
-                onDrop={this.onDrop}
-                onDragEnter={this.onDragEnter}
-                onDragLeave={this.onDragLeave}>
-                {({getRootProps, getInputProps}) => (
-                    <div
-                        className={this.state.draggingFile
-                        ? 'dragging-file'
-                        : ''}
-                        {...getRootProps()}>
-                        <FilesNavbarContainer handleUpload={this.onDrop}/>
-                        <FileListContainer/>
-                    </div>
-                )}
-            </Dropzone>
+            <div className='files-app-component'>
+                <Dropzone
+                    onDrop={this.onDrop}
+                    onDragEnter={this.onDragEnter}
+                    onDragLeave={this.onDragLeave}>
+                    {({getRootProps, getInputProps}) => (
+                        <div
+                            className={this.state.draggingFile
+                            ? ['dragging-file', 'dropzone'].join(' ')
+                            : 'dropzone'}
+                            {...getRootProps()}>
+                            <h1 className='title'>Files</h1>
+
+                            <FilesNavbarComponent
+                                currentPath={this.props.currentPath}
+                                navigateBack={() => this.props.navigateBack()}
+                                handleUpload={this.onDrop}/>
+
+                            <FileListContainer/>
+                        </div>
+                    )}
+                </Dropzone>
+            </div>
         );
     };
 }

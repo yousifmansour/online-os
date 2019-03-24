@@ -1,8 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
+import {navigateToFolder, deleteFileOrFolder} from 'actions/files';
+
 import FolderComponent from 'user/Files/components/FolderComponent';
 import FileComponent from 'user/Files/components/FileComponent';
+
+import './FileListContainer.css';
 
 class FileListContainer extends React.Component {
     render() {
@@ -10,19 +14,25 @@ class FileListContainer extends React.Component {
             .props
             .data
             .sort((a, b) => new Date(a.birthtime) - new Date(b.birthtime))
-            .map((file, i) => {
+            .map(file => {
                 if (file.isDirectory) 
                     return (<FolderComponent
-                        key={i}
+                        deleteFolder={() => this.props.deleteFileOrFolder(this.props.currentPath, file)}
+                        key={file.birthtime}
                         path={this.props.currentPath}
+                        addToPath={this.props.addToPath}
                         folder={file}
-                        navigateToFolder={() => this.props.navigateToFolder(file.name)}/>);
+                        navigateToFolder={() => this.props.navigateToFolder(this.props.currentPath, file.name)}/>);
                 else 
-                    return (<FileComponent key={i} path={this.props.currentPath} file={file}/>);
+                    return (<FileComponent
+                        deleteFile={() => this.props.deleteFileOrFolder(this.props.currentPath, file)}
+                        key={file.birthtime}
+                        path={this.props.currentPath}
+                        file={file}/>);
                 }
             )
         return (
-            <div>
+            <div className='file-list-container'>
                 {filesAndFolders}
             </div>
         );
@@ -33,4 +43,4 @@ function mapStateToProps(state) {
     return state.files;
 }
 
-export default connect(mapStateToProps)(FileListContainer);
+export default connect(mapStateToProps, {navigateToFolder, deleteFileOrFolder})(FileListContainer);

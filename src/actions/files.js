@@ -8,6 +8,19 @@ import {
 } from 'actions/types';
 import axios from 'axios';
 
+export function deleteFileOrFolder(path, fileOrFolder) {
+    return dispatch => {
+        axios.delete('http://localhost:8000/delete', {
+            data: {
+                path: path.join('/') + '/' + fileOrFolder.name
+            }
+        }).then((response) => {
+            console.log(response);
+            dispatch(loadFilesFoldersData(path));
+        }).catch(err => alert(err));
+    }
+}
+
 export function navigateToFolder(path, folder) {
     return (dispatch) => {
         dispatch({type: NAVIGATE_TO_FOLDER, payload: folder});

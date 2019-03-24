@@ -5,14 +5,14 @@ import FileDownload from 'js-file-download';
 
 import {ContextMenu, MenuItem, ContextMenuTrigger} from "react-contextmenu";
 
-// import './FileComponent.css';
+import './FileComponent.css';
 
 class FileComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            fileName: this.props.file.name,
-            tempFileName: this.props.file.name,
+            fileName: props.file.name,
+            tempFileName: props.file.name,
             renaming: false
         }
     }
@@ -22,18 +22,6 @@ class FileComponent extends React.Component {
         let newName = this.state.tempFileName;
         this.setState({fileName: newName, renaming: false});
         // update the server to tell it about new name (or through redux)
-    }
-
-    // action
-    deleteFile = () => {
-        let path = this.props.path;
-        let file = this.props.file;
-
-        axios.delete('http://localhost:8000/delete', {
-            data: {
-                path: path.join('/') + '/' + file.name
-            }
-        }).catch(err => alert(err));
     }
 
     // redirect to app
@@ -77,7 +65,7 @@ class FileComponent extends React.Component {
                     .fileName
                     .substring(0, 15)}</div>;
         
-        // split into container and componenet 
+        // split into container and componenet
         return (
             <div className='file-component'>
                 <div onClick={() => this.openFile(this.props.path, this.props.file)}>
@@ -111,7 +99,7 @@ class FileComponent extends React.Component {
                         </div>
                     </MenuItem>
 
-                    <MenuItem onClick={() => this.deleteFile()}>
+                    <MenuItem onClick={() => this.props.deleteFile()}>
                         <div
                             className='context-menu-item'
                             style={{

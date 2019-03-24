@@ -1,0 +1,28 @@
+.files-navbar-component {
+    min-width: 80vw;
+    max-width: 90vw;
+    display: flex;
+    background-color: rgb(73, 73, 73);
+    color: white;
+    border-radius: 4px;
+    margin: 2px 2px 20px;
+    /* padding: 8px; */
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.files-navbar-component .back-button {
+    cursor: pointer;
+    flex-basis: 25%;
+    max-width: 25%;
+}
+
+.files-navbar-component .upload-button {
+    flex-basis: 25%;
+    max-width: 25%;
+}
+
+.files-navbar-component .current-path {
+    flex-basis: 50%;
+}

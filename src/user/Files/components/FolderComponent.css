@@ -1,0 +1,41 @@
+.folder-component {
+    height: 15%;
+    /* width: 100%; */
+    margin: 2px;
+    border-radius: 8px;
+    padding: 4px;
+    cursor: pointer;
+
+    word-break: break-all;
+}
+.folder-component input {
+    max-width: 10vw;
+    font-size: 14px;
+}
+
+/* .folder-component:hover {
+    background-color: whitesmoke;
+    color: black;
+} */
+
+.folder-component:active {
+    background-color: whitesmoke;
+    color: black;
+}
+
+.folder-component .context-menu {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    border-radius: 4px;
+    min-height: 10vh;
+    min-width: 20vh;
+}
+
+.folder-component .context-menu .context-menu-item {
+    margin: 4px;
+}
+.folder-component .context-menu .context-menu-item:hover {
+    background-color: royalblue;
+    color: white;
+}

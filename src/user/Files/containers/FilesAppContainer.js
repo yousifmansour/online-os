@@ -21,13 +21,10 @@ class FilesAppContainer extends React.Component {
         .upload(this.props.currentPath, file);
 
     render() {
-        // has access to navigateToFolder, navigateBack and loadFilesFoldersData
-        return (
-            <div>
-                <h1>Files</h1>
-                <FilesAppComponent uploadFile={(file) => this.handleUpload(file)}/>
-            </div>
-        );
+        return (<FilesAppComponent
+            currentPath={this.props.currentPath}
+            navigateBack={() => this.props.navigateBack(this.props.currentPath)}
+            uploadFile={(file) => this.handleUpload(file)}/>);
     }
 }
 

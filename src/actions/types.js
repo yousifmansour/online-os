@@ -29,3 +29,4 @@ export const NAVIGATE_BACK = 'navigate_back';
 export const UPLOAD_PROGRESS = 'upload_progress';
 export const STARTED_UPLOAD = 'started_upload';
 export const FINISHED_UPLOAD = 'finished_upload';
+export const DELETE_FILE_OR_FOLDER = 'delete_file_or_folder';
