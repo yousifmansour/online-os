@@ -1,5 +1,6 @@
 .file-component {
-    height: 15%;
+    flex-basis: 10%;
+    
     margin: 2px;
     border-radius: 8px;
     padding: 4px;
@@ -12,11 +13,12 @@
     font-size: 14px;
 }
 
-/* .file-component:hover {
+.file-component:hover {
     background-color: whitesmoke;
     color: black;
 }
-*/
+
+
 .file-component:active {
     background-color: whitesmoke;
     color: black;

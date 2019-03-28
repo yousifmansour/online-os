@@ -14,7 +14,7 @@ const initialState = {
     appName: 'notes',
     notes: null,
     selectedNoteID: null,
-    nextID: null
+    nextID: 1
 };
 
 export default function notes(state = initialState, action) {
@@ -90,8 +90,11 @@ export default function notes(state = initialState, action) {
                 return state;
             
         case SET_STATE:
-            return action.payload.notes;
-
+            if (action.payload.note) 
+                return action.payload.notes;
+            else 
+                return state;
+            
         default:
             return state;
     }

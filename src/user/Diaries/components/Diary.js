@@ -16,7 +16,9 @@ class Diary extends React.Component {
     }
 
     componentDidMount() {
-        fetch('https://www.yousifmansour.space/api/online-os/diaries/' + this.props.match.params.currentWeek).then((data) => {
+        // let url = 'http://localhost:5000';
+        let url = 'https://www.yousifmansour.space/api/online-os';
+        fetch(url + '/diaries/' + this.props.match.params.currentWeek).then((data) => {
             data
                 .text()
                 .then((text) => {

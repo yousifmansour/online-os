@@ -35,8 +35,11 @@ export default function calculator(state = initialState, action) {
                 return state;
             
         case SET_STATE:
-            return action.payload.calculator;
-
+            if (action.payload.calculator) 
+                return action.payload.calculator;
+            else 
+                return state;
+            
         default:
             return state;
     }

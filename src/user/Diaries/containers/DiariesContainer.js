@@ -26,8 +26,9 @@ class DiariesContainer extends React.Component {
 
         // get avalible weeks and show them
 
-        /* if (!this.props.currentWeek) */
-        fetch('https://www.yousifmansour.space/api/online-os/diaries/').then((data) => {
+        // let url = 'http://localhost:5000';
+        let url = 'https://www.yousifmansour.space/api/online-os';
+        fetch(url + '/diaries/').then((data) => {
             data
                 .json()
                 .then((data) => this.setState({avalibleWeeks: data}));

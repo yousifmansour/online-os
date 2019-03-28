@@ -10,7 +10,7 @@ import {CLOSE_APP, SET_STATE} from 'actions/types';
 
 const initialState = {
     appName: 'files',
-    currentPath: ['home'],
+    currentPath: [],
     data: [],
     uploading: false,
     uploadProgress: 0
@@ -73,8 +73,11 @@ export default function files(state = initialState, action) {
                 return state;
             
         case SET_STATE:
-            return action.payload.files;
-
+            if (action.payload.files) 
+                return action.payload.files;
+            else 
+                return state;
+            
         default:
             return state;
     }

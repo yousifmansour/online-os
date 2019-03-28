@@ -10,7 +10,9 @@ import axios from 'axios';
 
 export function deleteFileOrFolder(path, fileOrFolder) {
     return dispatch => {
-        axios.delete('http://localhost:8000/delete', {
+        // let url = 'http://localhost:5000';
+        let url = 'https://www.yousifmansour.space/api/online-os';
+        axios.delete(url + '/files/delete', {
             data: {
                 path: path.join('/') + '/' + fileOrFolder.name
             }
@@ -40,10 +42,10 @@ export function navigateBack(path) {
 
 export function loadFilesFoldersData(path) {
     return (dispatch) => {
-        // let url = 'https://www.yousifmansour.space/api/online-os';
-        let url = 'http://localhost:8000/home?directory=';
+        // let url = 'http://localhost:5000';
+        let url = 'https://www.yousifmansour.space/api/online-os';
         axios
-            .get(url + path.join('/'))
+            .get(url + '/files/?directory=' + path.join('/'))
             .then((response) => {
                 dispatch({type: LOAD_FILES_FOLDERS_DATA, payload: response.data});
             });
@@ -57,8 +59,9 @@ export function upload(path, file) {
         const data = new FormData()
         data.append('file', file, file.name);
 
-        // let url = 'https://www.yousifmansour.space/api/online-os';
-        let uploadPath = 'http://localhost:8000/upload?path=' + path.join('/');
+        // let url = 'http://localhost:5000';
+        let url = 'https://www.yousifmansour.space/api/online-os';
+        let uploadPath = url+'/files/upload?path=' + path.join('/');
 
         axios
             .post(uploadPath, data, {

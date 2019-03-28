@@ -31,8 +31,11 @@ export default function diary(state = initialState, action) {
                 return state;
             
         case SET_STATE:
-            return action.payload.diary;
-
+            if (action.payload.diary) 
+                return action.payload.diary;
+            else 
+                return state;
+            
         default:
             return state;
     }
