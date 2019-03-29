@@ -61,7 +61,7 @@ class RecentAppItem extends React.Component {
                 <div className='recent-app-item'>
                     <NavLink exact to={'/' + this.props.app} activeClassName="active">
                         <h2>
-                            {this.props.app}
+                            {this.props.app.replace('-', ' ')}
                         </h2>
                     </NavLink>
                     <button className='close-app-button' onClick={this.props.closeApp}>X</button>

@@ -34,3 +34,5 @@ export const DELETE_FILE_OR_FOLDER = 'delete_file_or_folder';
 // pdf viewer actions
 export const SET_FILE_PATH = 'set_file_path';
 export const SET_PDF_SCROLL_POSITION = 'set_pdf_scroll_position';
+export const SCALE_UP_PDF = 'scale_up_pdf';
+export const SCALE_DOWN_PDF = 'scale_down_pdf';

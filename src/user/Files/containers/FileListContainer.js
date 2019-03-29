@@ -18,7 +18,7 @@ class FileListContainer extends React.Component {
                 if (file.isDirectory) 
                     return (<FolderComponent
                         deleteFolder={() => this.props.deleteFileOrFolder(this.props.currentPath, file)}
-                        key={file.birthtime}
+                        key={file.birthtime + Math.random()}
                         path={this.props.currentPath}
                         addToPath={this.props.addToPath}
                         folder={file}
@@ -26,7 +26,7 @@ class FileListContainer extends React.Component {
                 else 
                     return (<FileComponent
                         deleteFile={() => this.props.deleteFileOrFolder(this.props.currentPath, file)}
-                        key={file.birthtime}
+                        key={file.birthtime + Math.random()}
                         path={this.props.currentPath}
                         file={file}/>);
                 }

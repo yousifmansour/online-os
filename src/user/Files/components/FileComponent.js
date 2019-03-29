@@ -1,9 +1,10 @@
 import React from 'react';
-
+import {withRouter} from "react-router";
 import axios from 'axios';
 import FileDownload from 'js-file-download';
-
 import {ContextMenu, MenuItem, ContextMenuTrigger} from "react-contextmenu";
+import {connect} from 'react-redux';
+import {setFilePath} from 'actions/PDFViewer';
 
 import './FileComponent.css';
 
@@ -13,7 +14,8 @@ class FileComponent extends React.Component {
         this.state = {
             fileName: props.file.name,
             tempFileName: props.file.name,
-            renaming: false
+            renaming: false,
+            contextMenuShown: false
         }
     }
 
@@ -33,16 +35,32 @@ class FileComponent extends React.Component {
             .name
             .split('.')
             .pop();
-        let fileName = file.name;
-        alert('will open file in future . . .' + path.join('/') + fileExtension + '/' + fileName);
+
+        switch (fileExtension) {
+            case 'pdf':
+                if (!this.state.renaming && !this.state.contextMenuShown) {
+                    // create action to set file path
+                    this
+                        .props
+                        .setFilePath(path.join('/') + '/' + file.name)
+                    this
+                        .props
+                        .history
+                        .push('/pdf-viewer/');
+                }
+                break;
+            default:
+                alert('no app to open file with extenstion ' + fileExtension);
+                break;
+        }
     }
 
     downloadFile = () => {
         let path = this.props.path;
         let file = this.props.file;
 
-        // let url = 'http://localhost:5000';
-        let url = 'https://www.yousifmansour.space/api/online-os';
+        let url = 'http://localhost:5000';
+        // let url = 'https://www.yousifmansour.space/api/online-os';
 
         axios.get(url + '/files/download', {
             params: {
@@ -70,21 +88,21 @@ class FileComponent extends React.Component {
         
         // split into container and componenet
         return (
-            <div className='file-component'>
-                <div onClick={() => this.openFile(this.props.path, this.props.file)}>
-                    <ContextMenuTrigger
-                        id={this
-                        .props
-                        .path
-                        .join('/') + '/' + this.props.file.name}>
+            <div className='file-component' onClick={() => this.openFile()}>
+                <ContextMenuTrigger
+                    id={this
+                    .props
+                    .path
+                    .join('/') + '/' + this.props.file.name}>
 
-                        <i className="far fa-2x fa-file"></i>
+                    <i className="far fa-2x fa-file"></i>
+                </ContextMenuTrigger>
 
-                        {fileNameField}
-                    </ContextMenuTrigger>
-                </div>
+                {fileNameField}
 
                 <ContextMenu
+                    onShow={() => this.setState({contextMenuShown: true})}
+                    onHide={() => this.setState({contextMenuShown: false})}
                     className='context-menu'
                     id={this
                     .props
@@ -117,4 +135,4 @@ class FileComponent extends React.Component {
     }
 }
 
-export default FileComponent;
+export default withRouter(connect(null, {setFilePath})(FileComponent));

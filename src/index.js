@@ -6,15 +6,19 @@ import {createStore, applyMiddleware} from 'redux';
 import {HashRouter} from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 import reducer from 'reducers';
-
 import {getState} from 'actions/global'
 
 /* MIDDLEWARE SETUP */
 import thunk from 'redux-thunk';
 import io from 'socket.io-client';
 import createSocketIoMiddleware from 'redux-socket.io';
-// let socket = io('http://localhost:5000');
-let socket = io('https://www.yousifmansour.space:5000');
+
+// for pdf reader
+import {pdfjs} from 'react-pdf';
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+
+let socket = io('http://localhost:5000');
+// let socket = io('https://www.yousifmansour.space:5000');
 
 // will emit aciton if it's not from server
 let socketIoMiddleware = createSocketIoMiddleware(socket, (type, action) => !action.fromServer);

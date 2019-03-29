@@ -11,9 +11,16 @@ export default function recentApps(state = initialState, action) {
                     ...state,
                     action.payload
                 ];
-            else 
+            else {
+                // let otherApps = [...state];
+                // otherApps = otherApps.filter((app) => app !== action.payload);
+                // console.log([
+                //     action.payload, ...otherApps
+                // ]);
+                // return [action.payload, otherApps];
                 return state;
-            
+            }
+
         case CLOSE_APP:
             return [...state].filter((app) => app !== action.payload);
 

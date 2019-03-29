@@ -7,15 +7,10 @@ import Calculator from 'user/Calculator/components/Calculator';
 import calculate from "../logic/calculate";
 
 class CalculatorContainer extends React.Component {
-    constructor(props) {
-        super(props);
-        this.name = 'calculator';
-    }
-
     componentDidMount() {
         this
             .props
-            .addApp(this.name);
+            .addApp(this.props.appName);
     }
 
     handleChange = buttonName => {

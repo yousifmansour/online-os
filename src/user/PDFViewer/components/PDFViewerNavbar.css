@@ -1,0 +1,39 @@
+.pdf-viewer-navbar-component {
+    opacity: 0.5;
+    position: absolute;
+    bottom: 40vh;
+    left: 0;
+    color: white;
+    display: flex;
+
+    transition-duration: 0.1s;
+    transition-timing-function: linear;
+
+    background-color: rgb(117, 117, 117);
+
+    border-radius: 8px;
+    margin: 4px;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.pdf-viewer-navbar-component:hover {
+    opacity: 1;
+}
+
+.pdf-viewer-navbar-component button {
+    font-size: 22px;
+    border: 1px solid lightgrey;
+    text-decoration: none;
+    background-color: white;
+    padding: 4px;
+    margin: 4px;
+    min-width: 4rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.pdf-viewer-navbar-component button:hover {
+    opacity: 0.8;
+}
