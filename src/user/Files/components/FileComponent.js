@@ -81,10 +81,7 @@ class FileComponent extends React.Component {
                 onChange=
                 {(e)=> this.setState({tempFileName: e.target.value})}></input>;
         } else 
-            fileNameField = <div>{this
-                    .state
-                    .fileName
-                    .substring(0, 15)}</div>;
+            fileNameField = <div>{this.state.fileName}</div>;
         
         // split into container and componenet
         return (

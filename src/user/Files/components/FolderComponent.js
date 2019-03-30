@@ -26,7 +26,7 @@ class FolderComponent extends React.Component {
                 folderName: newName
             }, () => this.setState({renaming: false}));
         }
-
+    
     render() {
         let folderNameField;
         if (this.state.renaming) {
@@ -37,10 +37,7 @@ class FolderComponent extends React.Component {
                 onChange=
                 {(e)=> this.setState({tempFolderName: e.target.value})}></input>;
         } else 
-            folderNameField = <div>{this
-                    .state
-                    .folderName
-                    .substring(0, 15)}</div>;
+            folderNameField = <div>{this.state.folderName}</div>;
         
         return (
             <div className='folder-component'>
