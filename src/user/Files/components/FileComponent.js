@@ -4,7 +4,7 @@ import axios from 'axios';
 import FileDownload from 'js-file-download';
 import {ContextMenu, MenuItem, ContextMenuTrigger} from "react-contextmenu";
 import {connect} from 'react-redux';
-import {setFilePath} from 'actions/PDFViewer';
+import {setPDFPath} from 'actions/PDFViewer';
 
 import './FileComponent.css';
 
@@ -42,12 +42,18 @@ class FileComponent extends React.Component {
                     // create action to set file path
                     this
                         .props
-                        .setFilePath(path.join('/') + '/' + file.name)
+                        .setPDFPath(path.join('/') + '/' + file.name)
                     this
                         .props
                         .history
                         .push('/pdf-viewer/');
                 }
+                break;
+            case 'mp4':
+                this
+                    .props
+                    .history
+                    .push('/media-player/');
                 break;
             default:
                 alert('no app to open file with extenstion ' + fileExtension);
@@ -132,4 +138,4 @@ class FileComponent extends React.Component {
     }
 }
 
-export default withRouter(connect(null, {setFilePath})(FileComponent));
+export default withRouter(connect(null, {setPDFPath})(FileComponent));

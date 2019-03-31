@@ -32,7 +32,13 @@ export const FINISHED_UPLOAD = 'finished_upload';
 export const DELETE_FILE_OR_FOLDER = 'delete_file_or_folder';
 
 // pdf viewer actions
-export const SET_FILE_PATH = 'set_file_path';
+export const SET_PDF_PATH = 'set_pdf_path';
 export const SET_PDF_SCROLL_POSITION = 'set_pdf_scroll_position';
 export const SCALE_UP_PDF = 'scale_up_pdf';
 export const SCALE_DOWN_PDF = 'scale_down_pdf';
+
+// media player actions
+export const SET_MEDIA_PLAYING = 'set_media_playing';
+export const SET_MEDIA_PATH = 'set_media_path';
+export const SET_MEDIA_PROGRESS = 'set_media_progress';
+export const SET_MEDIA_STARTED_TIME = 'set_media_started_time';

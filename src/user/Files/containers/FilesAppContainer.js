@@ -1,6 +1,6 @@
+import React from 'react';
 import * as filesActions from 'actions/files';
 import {addApp} from 'actions/recentApps';
-import React from 'react';
 import {connect} from 'react-redux';
 
 import FilesAppComponent from 'user/Files/components/FilesAppComponent';
@@ -10,10 +10,6 @@ class FilesAppContainer extends React.Component {
         this
             .props
             .addApp(this.props.appName);
-
-        this
-            .props
-            .loadFilesFoldersData(this.props.currentPath);
     }
 
     handleUpload = (file) => this

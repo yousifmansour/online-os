@@ -1,5 +1,5 @@
 import {
-    SET_FILE_PATH,
+    SET_PDF_PATH,
     SET_PDF_SCROLL_POSITION,
     SCALE_UP_PDF,
     SCALE_DOWN_PDF,
@@ -9,12 +9,12 @@ import {
 
 const initialState = {
     appName: 'pdf-viewer',
-    currentFilePath: '/CMPS.pdf',
+    pdfPath: '',
     scrollPosition: 0,
     scale: 1
 };
 
-export default function diary(state = initialState, action) {
+export default function pdfViewer(state = initialState, action) {
     switch (action.type) {
         case SET_PDF_SCROLL_POSITION:
             return {
@@ -22,13 +22,13 @@ export default function diary(state = initialState, action) {
                 scrollPosition: + action.payload
             };
 
-        case SET_FILE_PATH:
+        case SET_PDF_PATH:
             let scrollPosition = state.scrollPosition;
-            if (state.currentFilePath !== action.payload) 
+            if (state.pdfPath !== action.payload) 
                 scrollPosition = 0;
             return {
                 ...state,
-                currentFilePath: action.payload,
+                pdfPath: action.payload,
                 scrollPosition
             };
 

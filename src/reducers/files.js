@@ -34,7 +34,7 @@ export default function files(state = initialState, action) {
             };
 
         case NAVIGATE_BACK:
-            if (state.currentPath.length > 1) {
+            if (state.currentPath.length > 0) {
                 let currentPath = state.currentPath;
                 currentPath.pop();
                 return {
@@ -73,9 +73,9 @@ export default function files(state = initialState, action) {
                 return state;
             
         case SET_STATE:
-            if (action.payload.files) 
+            if (action.payload.files) {
                 return action.payload.files;
-            else 
+            } else 
                 return state;
             
         default:

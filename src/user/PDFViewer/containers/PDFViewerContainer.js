@@ -50,7 +50,7 @@ class PDFViewerContainer extends React.Component {
             <div className='pdf-viewer-container'>
                 <div className='document'>
                     <Document
-                        file={url + "/home" + this.props.currentFilePath}
+                        file={url + "/home" + this.props.pdfPath}
                         onLoadSuccess={this.onDocumentLoadSuccess}
                         loading=''>
                         {allPages}

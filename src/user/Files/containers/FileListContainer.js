@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {navigateToFolder, deleteFileOrFolder} from 'actions/files';
+import {navigateToFolder, deleteFileOrFolder, loadFilesFoldersData} from 'actions/files';
 
 import FolderComponent from 'user/Files/components/FolderComponent';
 import FileComponent from 'user/Files/components/FileComponent';
@@ -9,6 +9,12 @@ import FileComponent from 'user/Files/components/FileComponent';
 import './FileListContainer.css';
 
 class FileListContainer extends React.Component {
+    componentDidMount() {
+        this
+            .props
+            .loadFilesFoldersData(this.props.currentPath);
+    }
+    
     render() {
         let filesAndFolders = this
             .props
@@ -43,4 +49,4 @@ function mapStateToProps(state) {
     return state.files;
 }
 
-export default connect(mapStateToProps, {navigateToFolder, deleteFileOrFolder})(FileListContainer);
+export default connect(mapStateToProps, {navigateToFolder, deleteFileOrFolder, loadFilesFoldersData})(FileListContainer);

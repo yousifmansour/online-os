@@ -10,6 +10,7 @@ import DiariesContainer from 'user/Diaries/containers/DiariesContainer';
 import Diary from 'user/Diaries/components/Diary';
 import FilesAppContainer from 'user/Files/containers/FilesAppContainer';
 import PDFViewerContainer from 'user/PDFViewer/containers/PDFViewerContainer';
+import MediaPlayerContainer from 'user/MediaPlayer/containers/MediaPlayerContainer';
 
 import 'system/App.css';
 import 'system/Animations.css';
@@ -28,6 +29,8 @@ const App = (props) => (
                 <Route exact path='/pdf-viewer' component={PDFViewerContainer}/>
                 <Route exact path="/diaries" component={DiariesContainer}/>
                 <Route exact path="/diaries/:currentWeek" component={Diary}/>
+                <Route exact path="/media-player" component={MediaPlayerContainer}/>
+
             </Switch>
         </div>
         <div className="navbar">

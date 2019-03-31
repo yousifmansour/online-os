@@ -44,9 +44,9 @@
     width: 40vw;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    min-height: 15vh;
 }
-
-.notes-component .card:hover{
+.notes-component .card:hover {
     opacity: 0.9;
 }
 
