@@ -55,6 +55,12 @@ class MediaPlayerContainer extends React.Component {
         
         let playing = this.props.mediaPlaying && this.state.playing;
         let playingOnOtherDevice = this.props.mediaPlaying && !this.state.playing;
+
+        // let url = 'http://localhost:5000';
+        let url = 'https://www.yousifmansour.space/api/online-os';
+
+        url = url + '/home' + this.props.mediaPath;
+
         return (
             <div>
                 <MediaPlayerComponent
