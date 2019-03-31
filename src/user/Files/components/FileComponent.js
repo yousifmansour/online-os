@@ -5,6 +5,7 @@ import FileDownload from 'js-file-download';
 import {ContextMenu, MenuItem, ContextMenuTrigger} from "react-contextmenu";
 import {connect} from 'react-redux';
 import {setPDFPath} from 'actions/PDFViewer';
+import {setMediaPath} from 'actions/MediaPlayer';
 
 import './FileComponent.css';
 
@@ -50,6 +51,9 @@ class FileComponent extends React.Component {
                 }
                 break;
             case 'mp4':
+                this
+                    .props
+                    .setMediaPath(path.join('/') + '/' + file.name);
                 this
                     .props
                     .history
@@ -138,4 +142,4 @@ class FileComponent extends React.Component {
     }
 }
 
-export default withRouter(connect(null, {setPDFPath})(FileComponent));
+export default withRouter(connect(null, {setPDFPath, setMediaPath})(FileComponent));
