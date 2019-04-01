@@ -1,5 +1,6 @@
 import React from 'react';
 import * as mediaActions from 'actions/MediaPlayer';
+import {addApp} from 'actions/recentApps';
 import {connect} from 'react-redux';
 import MediaPlayerComponent from 'user/MediaPlayer/components/MediaPlayerComponent';
 import MediaPlayerControlsComponent from 'user/MediaPlayer/components/MediaPlayerControlsComponent';
@@ -13,6 +14,12 @@ class MediaPlayerContainer extends React.Component {
         playedSeconds: 0,
         duration: 0,
         seeking: false
+    }
+
+    componentDidMount() {
+        this
+            .props
+            .addApp(this.props.appName);
     }
 
     handlePlayPause = () => {
@@ -73,8 +80,8 @@ class MediaPlayerContainer extends React.Component {
         let playing = this.props.mediaPlaying && this.state.playing;
         let playingOnOtherDevice = this.props.mediaPlaying && !this.state.playing;
 
-        // let url = 'http://localhost:5000';
-        let url = 'https://www.yousifmansour.space/api/online-os';
+        let url = 'http://localhost:5000';
+        // let url = 'https://www.yousifmansour.space/api/online-os';
 
         url = url + '/home' + this.props.mediaPath;
 
@@ -107,5 +114,6 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, {
-    ...mediaActions
+    ...mediaActions,
+    addApp
 })(MediaPlayerContainer);
