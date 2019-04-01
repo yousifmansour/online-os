@@ -1,4 +1,8 @@
 import React from 'react';
+import InputRange from 'react-input-range';
+
+import './CustomSliderComponent.css';
+import './MediaPlayerControlsComponent.css';
 
 class MediaPlayerControlsComponent extends React.Component {
     state = {
@@ -10,43 +14,44 @@ class MediaPlayerControlsComponent extends React.Component {
         this.setState({progress: nextProps.progress});
     }
 
-    handleChange = (e) => {
-        let value = e.target.value;
+    handleChange = (value) => {
         this.setState({
             progress: value
         }, () => this.props.seekTo(value, true));
     }
 
     render() {
+        let icon;
+        if (this.props.playing) 
+            icon = (
+                <i className="fas fa-3x fa-pause"></i>
+            );
+        else 
+            icon = (
+                <i className="fas fa-3x fa-play"></i>
+            );
         return (
-            <div>
-                <input
-                    style={{
-                    width: '80vw'
-                }}
-                    type='range'
-                    onTouchEnd={(e) => this.props.seekTo(e.target.value, false)}
-                    onMouseUp={(e) => this.props.seekTo(e.target.value, false)}
-                    max='1'
-                    min='0'
-                    step='0.001'
+            <div className='media-player-controls-component'>
+                <InputRange
+                    formatLabel={() => ''}
+                    maxValue={1}
+                    minValue={0}
+                    step={0.01}
+                    onChangeComplete={(progress) => this.props.seekTo(progress, false)}
                     value={this.state.progress}
-                    onChange={this.handleChange}/>
+                    onChange={(progress) => this.handleChange(progress)}/>
 
                 <div>
                     {this.props.playingOnOtherDevice
-                        ? 'playing on other device'
+                        ? 'Playing on other device'
                         : null}
                 </div>
 
-                <div>
-                    <h2>controls</h2>
-                    <button onClick={this.props.handlePlayPause}>play/pause</button>
-                </div>
-                <div>
-                    <div>progress: {this.props.progress}</div>
-                    <div>played seconds: {Math.floor(this.props.playedSeconds)}/{Math.floor(this.props.duration)}</div>
-                </div>
+                <button className='play-pause-button' onClick={this.props.handlePlayPause}>
+                    {icon}
+                </button>
+
+                <div>{Math.floor(this.props.playedSeconds)}/{Math.floor(this.props.duration)}</div>
             </div>
         );
     }

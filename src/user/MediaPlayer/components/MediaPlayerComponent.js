@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactPlayer from 'react-player'
 
+import './MediaPlayerComponent.css';
+
 class MediaPlayerComponent extends React.Component {
     state = {
         progress: this.props.progress
@@ -41,16 +43,16 @@ class MediaPlayerComponent extends React.Component {
     render() {
 
         return (
-            <div>
+            <div className='media-player-component'>
                 <ReactPlayer
                     url={this.props.url}
                     controls={false}
-                    width={'100vw'}
-                    height={'50vh'}
+                    width={'100%'}
+                    height={'100%'}
                     ref={this.ref}
                     onEnded={() => this.props.handlePlayPause()}
                     playing={this.props.playing}
-                    progressInterval={500}
+                    progressInterval={50}
                     onDuration={(duration) => this.props.setDuration(duration)}
                     onProgress={(data) => this.handleOnProgress(data)}/>
             </div>

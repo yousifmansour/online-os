@@ -14,18 +14,18 @@
 }
 
 .file-component:hover {
-    background-color: whitesmoke;
+    background-color: rgb(129, 129, 129);
     color: black;
 }
 
 
 .file-component:active {
-    background-color: whitesmoke;
+    background-color: rgb(129, 129, 129);
     color: black;
 }
 
 .file-component .context-menu {
-    background-color: white;
+    background-color: rgb(129, 129, 129);
     color: black;
     border: 2px solid black;
     border-radius: 4px;
@@ -37,6 +37,6 @@
     margin: 4px;
 }
 .file-component .context-menu .context-menu-item:hover {
-    background-color: royalblue;
-    color: white;
+    background-color: white;
+    color: black;
 }

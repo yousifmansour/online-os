@@ -13,10 +13,10 @@
     font-size: 14px;
 }
 
-/* .folder-component:hover {
-    background-color: whitesmoke;
+.folder-component:hover {
+    background-color: rgb(129, 129, 129);
     color: black;
-} */
+}
 
 .folder-component:active {
     background-color: whitesmoke;
@@ -24,7 +24,7 @@
 }
 
 .folder-component .context-menu {
-    background-color: white;
+    background-color: rgb(129, 129, 129);
     color: black;
     border: 2px solid black;
     border-radius: 4px;
@@ -35,7 +35,8 @@
 .folder-component .context-menu .context-menu-item {
     margin: 4px;
 }
+
 .folder-component .context-menu .context-menu-item:hover {
-    background-color: royalblue;
-    color: white;
+    background-color: white;
+    color: black;
 }

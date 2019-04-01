@@ -4,6 +4,8 @@ import {connect} from 'react-redux';
 import MediaPlayerComponent from 'user/MediaPlayer/components/MediaPlayerComponent';
 import MediaPlayerControlsComponent from 'user/MediaPlayer/components/MediaPlayerControlsComponent';
 
+import './MediaPlayerContainer.css';
+
 class MediaPlayerContainer extends React.Component {
     state = {
         startedTime: new Date().toISOString(),
@@ -71,13 +73,13 @@ class MediaPlayerContainer extends React.Component {
         let playing = this.props.mediaPlaying && this.state.playing;
         let playingOnOtherDevice = this.props.mediaPlaying && !this.state.playing;
 
-        // let url = 'http://localhost:5000';
-        let url = 'https://www.yousifmansour.space/api/online-os';
+        let url = 'http://localhost:5000';
+        // let url = 'https://www.yousifmansour.space/api/online-os';
 
         url = url + '/home' + this.props.mediaPath;
 
         return (
-            <div>
+            <div className='media-player-container'>
                 <MediaPlayerComponent
                     progress={this.props.mediaProgress}
                     ref={this.ref}
@@ -88,6 +90,7 @@ class MediaPlayerContainer extends React.Component {
                     handlePlayPause={this.handlePlayPause}
                     handleOnProgress={this.handleOnProgress}/>
                 <MediaPlayerControlsComponent
+                    playing={this.state.playing}
                     seekTo={(position, stillSeeking) => this.seekTo(position, stillSeeking)}
                     duration={this.state.duration}
                     playedSeconds={this.state.playedSeconds}

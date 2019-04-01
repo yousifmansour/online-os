@@ -3,4 +3,5 @@
     flex-direction: column;
     justify-content: center;
     max-width: 100vw; 
+    animation: app-launch 0.25s ease-in-out forwards;
 }

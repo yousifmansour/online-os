@@ -1,0 +1,21 @@
+.media-player-controls-component{
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.media-player-controls-component .play-pause-button{
+    background-color: transparent;
+    border: none;
+    padding: 12px;
+    margin: 4px;
+    cursor: pointer;
+    outline: none;  
+    border-radius: 4px;
+}
+
+.media-player-controls-component .play-pause-button:hover{
+    background-color: rgb(129, 129, 129);
+}

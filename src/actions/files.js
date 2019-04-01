@@ -10,8 +10,8 @@ import axios from 'axios';
 
 export function deleteFileOrFolder(path, fileOrFolder) {
     return dispatch => {
-        // let url = 'http://localhost:5000';
-        let url = 'https://www.yousifmansour.space/api/online-os';
+        let url = 'http://localhost:5000';
+        // let url = 'https://www.yousifmansour.space/api/online-os';
         axios.delete(url + '/files/delete', {
             data: {
                 path: path.join('/') + '/' + fileOrFolder.name
@@ -42,8 +42,8 @@ export function navigateBack(path) {
 
 export function loadFilesFoldersData(path) {
     return (dispatch) => {
-        // let url = 'http://localhost:5000';
-        let url = 'https://www.yousifmansour.space/api/online-os';
+        let url = 'http://localhost:5000';
+        // let url = 'https://www.yousifmansour.space/api/online-os';
         axios
             .get(url + '/files/?directory=' + path.join('/'))
             .then((response) => {
@@ -59,8 +59,8 @@ export function upload(path, file) {
         const data = new FormData()
         data.append('file', file, file.name);
 
-        // let url = 'http://localhost:5000';
-        let url = 'https://www.yousifmansour.space/api/online-os';
+        let url = 'http://localhost:5000';
+        // let url = 'https://www.yousifmansour.space/api/online-os';
         let uploadPath = url+'/files/upload?path=' + path.join('/');
 
         axios

@@ -17,8 +17,8 @@ import createSocketIoMiddleware from 'redux-socket.io';
 import {pdfjs} from 'react-pdf';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
-// let url = 'http://localhost:5000';
-let url = 'https://www.yousifmansour.space:5000';
+let url = 'http://localhost:5000';
+// let url = 'https://www.yousifmansour.space:5000';
 
 let socket = io(url);
 

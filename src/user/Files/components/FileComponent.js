@@ -69,8 +69,8 @@ class FileComponent extends React.Component {
         let path = this.props.path;
         let file = this.props.file;
 
-        // let url = 'http://localhost:5000';
-        let url = 'https://www.yousifmansour.space/api/online-os';
+        let url = 'http://localhost:5000';
+        // let url = 'https://www.yousifmansour.space/api/online-os';
 
         axios.get(url + '/files/download', {
             params: {
@@ -94,6 +94,27 @@ class FileComponent extends React.Component {
             fileNameField = <div>{this.state.fileName}</div>;
         
         // split into container and componenet
+
+        let icon;
+
+        switch (this.props.file.name.split('.').pop()) {
+            case 'pdf':
+                icon = (
+                    <i className="fas fa-2x fa-file-pdf"></i>
+                );
+                break;
+            case 'mp4':
+                icon = (
+                    <i className="fas fa-2x fa-file-video"></i>
+                );
+                break;
+            default:
+                icon = (
+                    <i className='far fa-2x fa-file'></i>
+                );
+                break;
+        }
+
         return (
             <div className='file-component' onClick={() => this.openFile()}>
                 <ContextMenuTrigger
@@ -102,7 +123,7 @@ class FileComponent extends React.Component {
                     .path
                     .join('/') + '/' + this.props.file.name}>
 
-                    <i className="far fa-2x fa-file"></i>
+                    {icon}
                 </ContextMenuTrigger>
 
                 {fileNameField}
