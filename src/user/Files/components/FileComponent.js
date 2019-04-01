@@ -69,8 +69,8 @@ class FileComponent extends React.Component {
         let path = this.props.path;
         let file = this.props.file;
 
-        let url = 'http://localhost:5000';
-        // let url = 'https://www.yousifmansour.space/api/online-os';
+        // let url = 'http://localhost:5000';
+        let url = 'https://www.yousifmansour.space/api/online-os';
 
         axios.get(url + '/files/download', {
             params: {
