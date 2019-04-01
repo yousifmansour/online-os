@@ -66,7 +66,7 @@ class MediaPlayerContainer extends React.Component {
                 <MediaPlayerComponent
                     mediaProgress={this.props.mediaProgress}
                     ref={this.ref}
-                    url={this.props.mediaPath}
+                    url={url}
                     playing={playing}
                     playingOnOtherDevice={this.playingOnOtherDevice}
                     setDuration={(duration) => this.setState({duration})}
