@@ -3,6 +3,7 @@ import {
     SET_MEDIA_PLAYING,
     SET_MEDIA_PROGRESS,
     SET_MEDIA_STARTED_TIME,
+    SET_MEDIA_SEEKING,
     CLOSE_APP,
     SET_STATE
 } from 'actions/types';
@@ -12,6 +13,7 @@ const initialState = {
     mediaPath: 'http://localhost:5000/home/big_buck_bunny.mp4',
     mediaPlaying: false,
     mediaProgress: 0,
+    mediaSeeking: false,
     startedTime: null
 };
 
@@ -26,6 +28,12 @@ export default function mediaPlayer(state = initialState, action) {
             } else 
                 return state;
             
+        case SET_MEDIA_SEEKING:
+            return {
+                ...state,
+                mediaSeeking: action.payload
+            };
+
         case SET_MEDIA_PLAYING:
             return {
                 ...state,

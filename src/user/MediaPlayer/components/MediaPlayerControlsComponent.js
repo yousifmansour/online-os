@@ -10,7 +10,6 @@ class MediaPlayerControlsComponent extends React.Component {
     };
 
     componentWillReceiveProps(nextProps) {
-        // if (Math.abs(this.state.progress - this.props.progress) > 0.05)
         this.setState({progress: nextProps.progress});
     }
 
@@ -37,7 +36,11 @@ class MediaPlayerControlsComponent extends React.Component {
                     maxValue={1}
                     minValue={0}
                     step={0.01}
-                    onChangeComplete={(progress) => this.props.seekTo(progress, false)}
+                    onChangeComplete={(progress) => {
+                    this
+                        .props
+                        .seekTo(progress, false);
+                }}
                     value={this.state.progress}
                     onChange={(progress) => this.handleChange(progress)}/>
 

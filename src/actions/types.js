@@ -42,3 +42,4 @@ export const SET_MEDIA_PLAYING = 'set_media_playing';
 export const SET_MEDIA_PATH = 'set_media_path';
 export const SET_MEDIA_PROGRESS = 'set_media_progress';
 export const SET_MEDIA_STARTED_TIME = 'set_media_started_time';
+export const SET_MEDIA_SEEKING = 'set_media_seeking';

@@ -49,12 +49,12 @@ class MediaPlayerContainer extends React.Component {
     }
 
     handleOnProgress = (data) => {
-        if (!this.state.playing || this.state.seeking) 
-            return;
-        this
-            .props
-            .setMediaProgress(data.played);
-        this.setState({playedSeconds: data.playedSeconds});
+        if (!this.props.mediaSeeking) {
+            this
+                .props
+                .setMediaProgress(data.played);
+            this.setState({playedSeconds: data.playedSeconds});
+        }
     }
 
     shouldStopPlaying = (serverTime, localTime) => this.state.playing && new Date(serverTime) > new Date(localTime);
@@ -67,9 +67,9 @@ class MediaPlayerContainer extends React.Component {
     // someone started playing after us, we stop
 
     seekTo = (position, stillSeeking) => {
-        if (stillSeeking !== this.state.seeking) 
-            this.setState({seeking: stillSeeking});
-        
+        this
+            .props
+            .setMediaSeeking(stillSeeking);
         this
             .props
             .setMediaProgress(position);
@@ -86,12 +86,13 @@ class MediaPlayerContainer extends React.Component {
 
         return (
             <div className='media-player-container'>
+                <div>{this.props.mediaSeeking + ''}</div>
                 <MediaPlayerComponent
                     progress={this.props.mediaProgress}
                     ref={this.ref}
                     url={url}
                     playing={playing}
-                    playingOnOtherDevice={this.playingOnOtherDevice}
+                    playingOnOtherDevice={playingOnOtherDevice}
                     setDuration={(duration) => this.setState({duration})}
                     handlePlayPause={this.handlePlayPause}
                     handleOnProgress={this.handleOnProgress}/>

@@ -15,8 +15,8 @@
     margin: 2px;
     color: white;
     cursor: pointer;
-    flex-basis: 7%;
-    max-width: 7%;
+    flex-basis: 15%;
+    max-width: 15%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,8 +34,8 @@
     margin: 2px;
     color: white;
     cursor: pointer;
-    flex-basis: 7%;
-    max-width: 7%;
+    flex-basis: 15%;
+    max-width: 15%;
 
     min-height: 100%;
     cursor: pointer;
@@ -70,7 +70,7 @@
 
 .files-navbar-component .current-path {
     border-radius: 8px;
-    flex-basis: 86%;
+    flex-basis: 70%;
 }
 
 .files-navbar-component .current-path:hover{

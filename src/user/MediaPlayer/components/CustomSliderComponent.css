@@ -1,17 +1,18 @@
 .input-range__slider {
     appearance: none;
-    background: transparent;
+    background: rgb(112, 112, 112);
+    /* background-color: transparent; */
     /* border: 1px solid black; */
-    border-radius: 100%;
+    border-radius: 4px;
     cursor: pointer;
     display: block;
-    height: 3rem;
-    margin-left: -1rem;
-    margin-top: -2rem;
+    height: 1rem;
+    margin-left: -0.7rem;
+    margin-top: -1rem;
     outline: none;
     position: absolute;
     top: 50%;
-    transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
+    /* transition: transform 0.1s ease-out, box-shadow 0.1s ease-out; */
     width: 1rem;
 }
 .input-range__slider:active {
@@ -28,7 +29,7 @@
 }
 
 .input-range__slider-container {
-    transition: left 0.1s ease-out;
+    /* transition: left 0.1s ease-out; */
 }
 
 .input-range__label {
@@ -73,7 +74,7 @@
     display: block;
     height: 1rem;
     position: relative;
-    transition: left 0.1s ease-out, width 0.1s ease-out;
+    /* transition: left 0.1s ease-out, width 0.1s ease-out; */
 }
 .input-range--disabled .input-range__track {
     background: #eeeeee;
@@ -97,4 +98,4 @@
     width: 100%;
 }
 
-/*# sourceMappingURL=index.css.map */
+/* # sourceMappingURL=index.css.map */

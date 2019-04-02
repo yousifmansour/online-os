@@ -34,10 +34,9 @@ class MediaPlayerComponent extends React.Component {
     }
 
     handleOnProgress = (data) => {
-        this
-            .props
-            .handleOnProgress(data);
-        this.setState({progress: data.played});
+        this.setState({
+            progress: data.played
+        }, () => this.props.handleOnProgress(data));
     }
 
     render() {
