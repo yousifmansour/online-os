@@ -3,16 +3,7 @@
     flex-direction: column;
     min-height: 50vh;
     align-items: center;
-    /* padding: 20px; */
     height: 100%;
     background-color: black;
-    animation: app-launch 0.25s ease-in-out forwards;
+    animation: app-launch 0.35s ease-out forwards;
 }
-
-/* .calculator-container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: 100%;
-} */
-  

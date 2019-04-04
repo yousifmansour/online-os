@@ -31,3 +31,22 @@
     background-color: #eeecec;
     color: black;
 }
+
+
+@media (orientation: portrait) and (min-width:1024px) {
+    .component-button button {
+        font-size: 5rem;
+    }
+}
+
+@media (orientation: landscape) and (min-width:1366px) {
+    .component-button button {
+        font-size: 5rem;
+    }
+}
+
+@media (min-width:1500px) {
+    .component-button button {
+        font-size: 3.5rem;
+    }
+}

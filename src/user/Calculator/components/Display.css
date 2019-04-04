@@ -12,5 +12,23 @@
 
 .component-display > div {
     font-size: 5rem;
-    /* padding: 0.2rem 0.7rem 0.1rem 0.5rem; */
+    padding: 0.2rem 0.7rem 0.1rem 0.5rem;
+}
+
+@media (orientation: portrait) and (min-width:1024px) {
+    .component-display > div {
+        font-size: 10rem;
+    }
+}
+
+@media (orientation: landscape) and (min-width:1366px) {
+    .component-display > div {
+        font-size: 10rem;
+    }
+}
+
+@media (min-width:1500px) {
+    .component-display > div {
+        font-size: 7rem;
+    }
 }

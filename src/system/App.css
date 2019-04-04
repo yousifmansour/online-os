@@ -17,7 +17,6 @@ body {
 }
 
 .App .viewport {
-    /* flex-basis: 95%; */
     flex-grow: 2;
     overflow-y: auto;
 }
@@ -25,11 +24,12 @@ body {
 /* scrollbar styles */
 .App .viewport::-webkit-scrollbar {
     width: 4px;
-    background-color: whitesmoke;
+    background-color: rgb(173, 173, 173);
 }
 
 .App .viewport::-webkit-scrollbar-thumb {
-    background-color: darkgray;
+    background-color: rgb(53, 53, 53);
+    /* border: 1px solid black; */
     border-radius: 4px;
 }
 /* scrollbar styles */

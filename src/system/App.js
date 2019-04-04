@@ -15,7 +15,7 @@ import MediaPlayerContainer from 'user/MediaPlayer/containers/MediaPlayerContain
 import 'system/App.css';
 import 'system/Animations.css';
 
-const App = (props) => (
+const App = () => (
     <div className="App">
         <div className='viewport'>
             <Switch>
@@ -26,9 +26,8 @@ const App = (props) => (
                 <Route exact path="/notes" component={NotesContainer}/>
                 <Route exact path="/note" component={NotePageContainer}/>
                 <Route exact path="/files" component={FilesAppContainer}/>
-                <Route exact path='/pdf-viewer' component={PDFViewerContainer}/>
-                <Route exact path="/diaries" component={DiariesContainer}/>
-                <Route exact path="/diaries/:currentWeek" component={Diary}/>
+                <Route exact path='/pdf-viewer' component={PDFViewerContainer}/> {/* <Route exact path="/diaries" component={DiariesContainer}/>
+                <Route exact path="/diaries/:currentWeek" component={Diary}/> */}
                 <Route exact path="/media-player" component={MediaPlayerContainer}/>
 
             </Switch>

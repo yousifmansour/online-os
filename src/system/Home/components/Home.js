@@ -15,9 +15,9 @@ const Home = (props) => (
                 Notes
             </NavLink>
 
-            <NavLink exact to="/diaries" activeClassName="active">
+            {/* <NavLink exact to="/diaries" activeClassName="active">
                 Diaries
-            </NavLink>
+            </NavLink> */}
 
             <NavLink exact to="/files" activeClassName="active">
                 Files

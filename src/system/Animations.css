@@ -1,39 +1,33 @@
 @keyframes come-up {
     0% {
-        transform: translateY(100vh);
+        transform: translateY(90vh);
         overflow: hidden;
     }
     99% {
-        /* might not be needed */
         overflow: hidden;
     }
     100% {
-        transform: translateY(000px);
+        transform: translateY(0px);
         overflow: auto;
     }
 }
+
 @keyframes scale-down {
     0% {
-        /* opacity: 0; */
-        transform: scale(1.2);
+        transform: scale(2);
     }
 
     100% {
-        /* opacity: 1; */
         transform: scale(1);
     }
 }
 @keyframes app-launch {
     0% {
-        opacity: 0;
-        /* transform: scale(0.2); */
-    }
-    50% {
-        /* transform: scale(1); */
+        /* filter: blur(5px); */
         opacity: 0;
     }
     100% {
+        /* filter: blur(0); */
         opacity: 1;
-
     }
 }

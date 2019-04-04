@@ -1,13 +1,42 @@
-@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans');
-
+@import url( 'https://fonts.googleapis.com/css?family=Alegreya+Sans');
 
 .time-and-date {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.288);
     color: white;
+    margin-top: -8px;
+    border-radius: 4px;
     text-align: center;
     width: 100%;
-
     font-family: 'Alegreya Sans', sans-serif;
     font-size: 20px;
-
+}
+@media (orientation: portrait) and (max-width: 375px) {
+    .time-and-date {
+        font-size: 24px;
+    }
+}
+@media (orientation: portrait) and (min-width:768px) {
+    .time-and-date {
+        font-size: 28px;
+    }
+}
+@media (orientation: portrait) and (min-width:1024px) {
+    .time-and-date {
+        font-size: 34px;
+    }
+}
+@media (orientation: landscape) and (min-width:1024px) {
+    .time-and-date {
+        font-size: 32px;
+    }
+}
+@media (orientation: landscape) and (min-width:1366px) {
+    .time-and-date {
+        font-size: 42px;
+    }
+}
+@media (orientation: landscape) and (min-width:1500px) {
+    .time-and-date {
+        font-size: 34px;
+    }
 }
