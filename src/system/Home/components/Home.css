@@ -2,12 +2,8 @@
     width: 100vw;
     min-height: 100%;
 
-    background: #396afc;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #2948ff, #396afc);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #2948ff, #396afc);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: url('http://getwallpapers.com/wallpaper/full/d/8/0/74347.jpg');
+    background-size: cover;
 
     display: flex;
     flex-direction: column;
@@ -15,9 +11,19 @@
     animation: scale-down 0.2s forwards ease-in;
 }
 
+.list-container .links .icon {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    font-size: 20px;
+    border: 1px solid transparent;
+}
+
 .list-container .links {
     flex-grow: 3;
-
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -30,31 +36,30 @@
 .list-container .links a {
     flex-basis: 20%;
     max-width: 20%;
-
     min-height: 10vh;
     text-decoration: none;
-    background-color: black;
-    border-radius: 8px;
-    color: white;
-    margin: 4px;
     text-align: center;
 }
-.list-container .links a:hover {
-    opacity: 0.7;
-    color: white;
+.list-container .links .icon:hover {
+    border: 1px solid rgba(0, 0, 0, 0.288);
+    background-color: rgba(0, 0, 0, 0.041);
+    border-radius: 4px;
 }
-.list-container .links a:active {
-    background-color: rgb(61, 61, 61);
-    color: azure;
+.list-container .links .icon:active {
+    border: 1px solid rgba(0, 0, 0, 0.288);
+    background-color: rgba(0, 0, 0, 0.041);
+    border-radius: 4px;
 }
 @media (orientation: portrait) and (max-width: 375px) {
     .list-container .links {
-        justify-content: flex-start;
+        /* justify-content: flex-start; */
     }
     .list-container .links a {
         flex-basis: 30%;
         max-width: 30%;
-        font-size: 20px;
+    }
+    .list-container .links .icon {
+        font-size: 22px;
     }
 }
 @media (orientation: portrait) and (min-width:768px) {
@@ -78,7 +83,21 @@
     }
 }
 @media (orientation: landscape) and (min-width:1500px) {
+    .list-container .links {
+        /* flex-direction: column; */
+    }
+    .list-container .links {
+        align-items: flex-start;
+        align-content: flex-start;
+        justify-content: flex-start;
+    }
+
     .list-container .links a {
-        font-size: 28px;
+        flex-basis: 10%;
+        max-width: 10%;
+    }
+
+    .list-container .links .icon {
+        font-size: 20px;
     }
 }

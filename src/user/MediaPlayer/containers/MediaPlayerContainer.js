@@ -86,7 +86,6 @@ class MediaPlayerContainer extends React.Component {
 
         return (
             <div className='media-player-container'>
-                <div>{this.props.mediaSeeking + ''}</div>
                 <MediaPlayerComponent
                     progress={this.props.mediaProgress}
                     ref={this.ref}

@@ -5,16 +5,10 @@
     max-width: 100vw;
     min-height: 100%;
     align-items: center;
-    animation: app-launch .35s ease-out forwards;
-}
-
-.notes-component .cards-contaienr h2 {
-    color: black;
-    text-underline-position: below;
-    font-size: 2rem;
 }
 
 .cards-container {
+    animation: come-up 0.3s ease-in-out forwards;
     margin-top: 1rem;
     max-width: 100vw;
     display: flex;
@@ -54,7 +48,7 @@
     overflow: hidden;
     display: inline-block;
     font-family: 'Open Sans', sans-serif;
-    font-size: 1rem;
+    font-size: 16px;
     min-height: 5vh;
     max-height: 60vh;
     background-color: #feff9c;
@@ -89,17 +83,87 @@
 }
 
 .notes-component .new-note {
-    min-width: 70vw;
+    min-width: 40vw;
     outline: none;
     background-color: #16fbff;
     color: white;
     border: none;
-    font-size: 2rem;
+    font-size: 30px;
     opacity: 1;
+    cursor: pointer;
 }
 .notes-component .new-note:hover {
     opacity: 0.5;
 }
 .notes-component .new-note:active {
     opacity: 0.5;
+}
+
+@media (orientation: portrait) and (max-width: 375px) {
+    .notes-component .card .note {
+        font-size: 16px;
+    }
+    .notes-component .delete-button {
+        font-size: 18px;
+    }
+    .notes-component .new-note {
+        font-size: 30px;
+    }
+}
+
+@media (orientation: portrait) and (min-width:768px) {
+    .notes-component .card .note {
+        font-size: 24px;
+    }
+    .notes-component .delete-button {
+        font-size: 24px;
+    }
+    .notes-component .new-note {
+        font-size: 40px;
+    }
+}
+
+@media (orientation: portrait) and (min-width:1024px) {
+    .notes-component .card .note {
+        font-size: 28px;
+    }
+    .notes-component .delete-button {
+        font-size: 30px;
+    }
+    .notes-component .new-note {
+        font-size: 48px;
+    }
+}
+@media (orientation: landscape) and (min-width:1024px) {
+    .notes-component .card .note {
+        font-size: 28px;
+    }
+    .notes-component .delete-button {
+        font-size: 26px;
+    }
+    .notes-component .new-note {
+        font-size: 44px;
+    }
+}
+@media (orientation: landscape) and (min-width:1366px) {
+    .notes-component .card .note {
+        font-size: 36px;
+    }
+    .notes-component .delete-button {
+        font-size: 36px;
+    }
+    .notes-component .new-note {
+        font-size: 58px;
+    }
+}
+@media (orientation: landscape) and (min-width:1500px) {
+    .notes-component .card .note {
+        font-size: 18px;
+    }
+    .notes-component .delete-button {
+        font-size: 20px;
+    }
+    .notes-component .new-note {
+        font-size: 32px;
+    }
 }

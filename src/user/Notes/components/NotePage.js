@@ -13,14 +13,16 @@ const NotePage = ({
     resetSelectedNote
 }) => (
     <div className='note-page-component'>
-        <div>
+        <div className='navbar'>
             <button
+                className='back-button'
                 onClick={() => {
                 resetSelectedNote();
                 history.push('/notes')
             }}>
                 <i className="fas fa-2x fa-chevron-left"></i>
             </button>
+            <button className='delete-button' onClick={deleteNote}>X</button>
         </div>
 
         <div className='card'>
@@ -29,7 +31,6 @@ const NotePage = ({
                 autoFocus={true}
                 value={text}
                 onChange={(e) => setNote({id, text: e.target.value})}></textarea>
-            <button className='delete-button' onClick={deleteNote}>X</button>
         </div>
     </div>
 );

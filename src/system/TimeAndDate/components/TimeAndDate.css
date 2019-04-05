@@ -1,8 +1,7 @@
 @import url( 'https://fonts.googleapis.com/css?family=Alegreya+Sans');
 
 .time-and-date {
-    background-color: rgba(0, 0, 0, 0.288);
-    color: white;
+    color: black;
     margin-top: -8px;
     border-radius: 4px;
     text-align: center;
