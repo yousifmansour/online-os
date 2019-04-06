@@ -1,11 +1,12 @@
 @import url( 'https://fonts.googleapis.com/css?family=Alegreya+Sans');
 
 .time-and-date {
-    color: black;
-    margin-top: -8px;
+    background-color: rgba(0, 0, 0, 0.308);
+    color: white;
+    margin-top: 5vw;
     border-radius: 4px;
     text-align: center;
-    width: 100%;
+    width: 80vw;
     font-family: 'Alegreya Sans', sans-serif;
     font-size: 20px;
 }
@@ -36,6 +37,8 @@
 }
 @media (orientation: landscape) and (min-width:1500px) {
     .time-and-date {
+        margin-top: 1vw;
+        margin-bottom: 5vw;
         font-size: 34px;
     }
 }

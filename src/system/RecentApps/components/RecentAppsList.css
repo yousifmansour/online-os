@@ -21,5 +21,5 @@
     align-items: center;
     justify-content: center;
     min-height: 140vh;
-    animation: come-up 0.35s ease-in-out forwards;
+    animation: come-up 0.2s ease-out forwards;
 }

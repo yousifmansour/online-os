@@ -2,13 +2,15 @@
     width: 100vw;
     min-height: 100%;
 
-    background: url('http://getwallpapers.com/wallpaper/full/d/8/0/74347.jpg');
+    /* background: url('http://getwallpapers.com/wallpaper/full/d/8/0/74347.jpg'); */
+    background: url('http://getwallpapers.com/wallpaper/full/f/8/1/74346.jpg');
     background-size: cover;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    animation: scale-down 0.2s forwards ease-in;
+
+    animation: scale-down 0.2s ease-out forwards;
 }
 
 .list-container .links .icon {
@@ -41,8 +43,8 @@
     text-align: center;
 }
 .list-container .links .icon:hover {
-    border: 1px solid rgba(0, 0, 0, 0.288);
-    background-color: rgba(0, 0, 0, 0.041);
+    border: 1px solid rgba(0, 183, 255, 0.507);
+    background-color: rgba(0, 183, 255, 0.123);
     border-radius: 4px;
 }
 .list-container .links .icon:active {

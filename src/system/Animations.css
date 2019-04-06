@@ -3,7 +3,7 @@
         transform: translateY(90vh);
     }
     100% {
-        transform: translateY(0px);
+        transform: translateY(0vh);
         overflow: hidden;
     }
 }
