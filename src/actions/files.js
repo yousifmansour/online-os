@@ -8,6 +8,8 @@ import {
 } from 'actions/types';
 import axios from 'axios';
 
+
+
 export function deleteFileOrFolder(path, fileOrFolder) {
     return dispatch => {
         // let url = 'http://localhost:5000';

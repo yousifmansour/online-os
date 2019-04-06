@@ -17,8 +17,10 @@ body {
 }
 
 .App .viewport {
+    background-color: rgb(77, 77, 77);
     flex-grow: 2;
     overflow-y: auto;
+    max-height: 95vh;
 }
 
 /* scrollbar styles */
