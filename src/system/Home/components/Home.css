@@ -1,10 +1,15 @@
-.list-container {
+.home {
     width: 100vw;
-    min-height: 100%;
+    height: 100%;
 
     /* background: url('http://getwallpapers.com/wallpaper/full/d/8/0/74347.jpg'); */
     background: url('http://getwallpapers.com/wallpaper/full/f/8/1/74346.jpg');
     background-size: cover;
+}
+
+.home .list-container {
+    width: 100vw;
+    height: 100%;
 
     display: flex;
     flex-direction: column;
@@ -13,7 +18,7 @@
     animation: scale-down 0.3s ease-in forwards;
 }
 
-.list-container .links .icon {
+.home .list-container .links .icon {
     display: flex;
     flex-direction: column;
     color: white;
@@ -24,7 +29,7 @@
     border: 1px solid transparent;
 }
 
-.list-container .links {
+.home .list-container .links {
     flex-grow: 3;
     width: 100%;
     display: flex;
@@ -35,47 +40,47 @@
     margin-bottom: 8px;
 }
 
-.list-container .links a {
+.home .list-container .links a {
     flex-basis: 20%;
     max-width: 20%;
     min-height: 10vh;
     text-decoration: none;
     text-align: center;
 }
-.list-container .links .icon:hover {
+.home .list-container .links .icon:hover {
     border: 1px solid rgba(0, 183, 255, 0.507);
     background-color: rgba(0, 183, 255, 0.123);
     border-radius: 4px;
 }
-.list-container .links .icon:active {
+.home .list-container .links .icon:active {
     border: 1px solid rgba(0, 0, 0, 0.288);
     background-color: rgba(0, 0, 0, 0.041);
     border-radius: 4px;
 }
 @media (orientation: portrait) and (max-width: 375px) {
-    .list-container .links {
+    .home .list-container .links {
         /* justify-content: flex-start; */
     }
-    .list-container .links a {
+    .home .list-container .links a {
         flex-basis: 30%;
         max-width: 30%;
     }
-    .list-container .links .icon {
+    .home .list-container .links .icon {
         font-size: 22px;
     }
 }
 @media (orientation: portrait) and (min-width:768px) {
-    .list-container .links a {
+    .home .list-container .links a {
         font-size: 28px;
     }
 }
 @media (orientation: portrait) and (min-width:1024px) {
-    .list-container .links a {
+    .home .list-container .links a {
         font-size: 34px;
     }
 }
 @media (orientation: landscape) and (min-width:1024px) {
-    .list-container .links a {
+    .home .list-container .links a {
         font-size: 28px;
     }
 }
@@ -85,21 +90,21 @@
     }
 }
 @media (orientation: landscape) and (min-width:1500px) {
-    .list-container .links {
+    .home .list-container .links {
         /* flex-direction: column; */
     }
-    .list-container .links {
+    .home .list-container .links {
         align-items: flex-start;
         align-content: flex-start;
         justify-content: flex-start;
     }
 
-    .list-container .links a {
+    .home .list-container .links a {
         flex-basis: 10%;
         max-width: 10%;
     }
 
-    .list-container .links .icon {
+    .home .list-container .links .icon {
         font-size: 20px;
     }
 }
