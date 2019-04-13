@@ -17,7 +17,7 @@
     border-radius: 8px;
     color: white;
     background-color: rgb(37, 37, 37);
-    animation: scale-up 0.2s ease-out forwards;
+    animation: scale-up 0.3s ease-in forwards;
 }
 
 .files-app-component .dragging-file {

@@ -43,3 +43,6 @@ export const SET_MEDIA_PATH = 'set_media_path';
 export const SET_MEDIA_PROGRESS = 'set_media_progress';
 export const SET_MEDIA_STARTED_TIME = 'set_media_started_time';
 export const SET_MEDIA_SEEKING = 'set_media_seeking';
+
+// image viewer actions
+export const SET_IMAGE_PATH = 'set_image_path';

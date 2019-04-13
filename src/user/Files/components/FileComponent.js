@@ -6,6 +6,7 @@ import {ContextMenu, MenuItem, ContextMenuTrigger} from "react-contextmenu";
 import {connect} from 'react-redux';
 import {setPDFPath} from 'actions/PDFViewer';
 import {setMediaPath} from 'actions/MediaPlayer';
+import {setImagePath} from 'actions/imageViewer';
 
 import './FileComponent.css';
 
@@ -50,6 +51,7 @@ class FileComponent extends React.Component {
                         .push('/pdf-viewer/');
                 }
                 break;
+
             case 'mp4':
                 this
                     .props
@@ -59,6 +61,37 @@ class FileComponent extends React.Component {
                     .history
                     .push('/media-player/');
                 break;
+
+            case 'jpg':
+                this
+                    .props
+                    .setImagePath(path.join('/') + '/' + file.name);
+                this
+                    .props
+                    .history
+                    .push('/image-viewer/');
+                break;
+
+            case 'jpeg':
+                this
+                    .props
+                    .setImagePath(path.join('/') + '/' + file.name);
+                this
+                    .props
+                    .history
+                    .push('/image-viewer/');
+                break;
+
+            case 'png':
+                this
+                    .props
+                    .setImagePath(path.join('/') + '/' + file.name);
+                this
+                    .props
+                    .history
+                    .push('/image-viewer/');
+                break;
+
             default:
                 alert('no app to open file with extenstion ' + fileExtension);
                 break;
@@ -163,4 +196,4 @@ class FileComponent extends React.Component {
     }
 }
 
-export default withRouter(connect(null, {setPDFPath, setMediaPath})(FileComponent));
+export default withRouter(connect(null, {setPDFPath, setMediaPath, setImagePath})(FileComponent));

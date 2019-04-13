@@ -4,7 +4,6 @@ import * as pdfViewerActions from 'actions/PDFViewer';
 import {addApp} from 'actions/recentApps';
 
 import {Document, Page} from 'react-pdf';
-import PDFViewerNavbar from 'user/PDFViewer/components/PDFViewerNavbar';
 
 import './PDFViewerContainer.css';
 
@@ -56,9 +55,6 @@ class PDFViewerContainer extends React.Component {
                         {allPages}
                     </Document>
                 </div>
-                <PDFViewerNavbar
-                    scaleUpPDF={this.props.scaleUpPDF}
-                    scaleDownPDF={this.props.scaleDownPDF}/>
             </div>
         );
     }

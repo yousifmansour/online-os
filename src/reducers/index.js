@@ -6,6 +6,7 @@ import diary from 'reducers/diary';
 import files from 'reducers/files';
 import pdfViewer from 'reducers/PDFViewer';
 import mediaPlayer from 'reducers/MediaPlayer';
+import imageViewer from 'reducers/imageViewer';
 
 export default combineReducers({
     recentApps,
@@ -14,5 +15,6 @@ export default combineReducers({
     diary,
     files,
     pdfViewer,
-    mediaPlayer
+    mediaPlayer,
+    imageViewer
 });

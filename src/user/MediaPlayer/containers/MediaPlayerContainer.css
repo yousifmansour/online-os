@@ -5,7 +5,10 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    color: white;
+    /* align-items: center; */
+
+    background-color: greenyellow;
+    background-color: black;
+    /* color: white; */
     /* animation: scale-up 0.2s ease-out forwards; */
 }

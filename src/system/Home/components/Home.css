@@ -10,7 +10,7 @@
     flex-direction: column;
     align-items: center;
 
-    animation: scale-down 0.2s ease-out forwards;
+    animation: scale-down 0.3s ease-in forwards;
 }
 
 .list-container .links .icon {
