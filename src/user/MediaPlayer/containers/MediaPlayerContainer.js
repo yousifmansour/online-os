@@ -82,7 +82,7 @@ class MediaPlayerContainer extends React.Component {
         // let url = 'http://localhost:5000';
         let url = 'https://www.yousifmansour.space/api/online-os';
 
-        url = url + '/home' + this.props.mediaPath;
+        url = url + '/home/' + this.props.mediaPath;
 
         return (
             <div className='media-player-container'>

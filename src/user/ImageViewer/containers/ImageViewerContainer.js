@@ -11,12 +11,12 @@ class ImageViewerContainer extends React.Component {
             .addApp(this.props.appName);
     }
     render() {
-        // let url = 'http://localhost:5000';
-        let url = 'https://www.yousifmansour.space/api/online-os';
+        let url = 'http://localhost:5000';
+        // let url = 'https://www.yousifmansour.space/api/online-os';
 
         let images = [
             {
-                src: url + "/home" + this.props.imagePath,
+                src: url + "/home/" + this.props.imagePath,
                 alt: ''
             }
         ];

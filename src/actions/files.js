@@ -8,8 +8,6 @@ import {
 } from 'actions/types';
 import axios from 'axios';
 
-
-
 export function deleteFileOrFolder(path, fileOrFolder) {
     return dispatch => {
         // let url = 'http://localhost:5000';
@@ -63,7 +61,7 @@ export function upload(path, file) {
 
         // let url = 'http://localhost:5000';
         let url = 'https://www.yousifmansour.space/api/online-os';
-        let uploadPath = url+'/files/upload?path=' + path.join('/');
+        let uploadPath = url + '/files/upload?path=' + path.join('/');
 
         axios
             .post(uploadPath, data, {
