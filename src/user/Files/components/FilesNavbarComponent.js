@@ -5,7 +5,7 @@ import './FilesNavbarComponent.css';
 const FilesNavbarComponent = ({currentPath, navigateBack, handleUpload}) => {
     let path = '/home';
     if (currentPath.length >= 1) 
-        path += ' / ' + currentPath.join(' / ');
+        path += '/' + currentPath.join('/');
     return (
         <div className='files-navbar-component'>
 
