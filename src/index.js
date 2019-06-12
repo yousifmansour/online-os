@@ -30,7 +30,6 @@ const persistToServer = store => next => action => {
     let result = next(action);
     if (!action.fromServer) 
         socket.emit('update state', store.getState());
-    
     return result;
 };
 /* MIDDLEWARE SETUP */

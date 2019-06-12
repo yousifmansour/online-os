@@ -7,6 +7,7 @@ import files from 'reducers/files';
 import pdfViewer from 'reducers/PDFViewer';
 import mediaPlayer from 'reducers/MediaPlayer';
 import imageViewer from 'reducers/imageViewer';
+import settings from 'reducers/settings';
 
 export default combineReducers({
     recentApps,
@@ -16,5 +17,6 @@ export default combineReducers({
     files,
     pdfViewer,
     mediaPlayer,
-    imageViewer
+    imageViewer,
+    settings
 });

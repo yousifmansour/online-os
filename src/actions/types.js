@@ -46,3 +46,7 @@ export const SET_MEDIA_SEEKING = 'set_media_seeking';
 
 // image viewer actions
 export const SET_IMAGE_PATH = 'set_image_path';
+
+// home actions
+export const SET_BACKGROUND_IMAGE_INDEX = 'set_background_image_index';
+export const SET_BACKGROUND_DATA = 'set_background_data';

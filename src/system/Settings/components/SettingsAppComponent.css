@@ -1,0 +1,108 @@
+.settings-app-component {
+    min-width: 100%;
+    min-height: 100%;
+
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    transition: 0.25s;
+    transition-delay: 0.1s;
+    transition-timing-function: ease-in-out;
+}
+
+.settings-app-component .title{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.334);
+    padding: 4px;
+    border-radius: 4px;
+    animation: fade-in 0.3s ease-in forwards;
+}
+
+.settings-app-component .image-selector {
+    animation: fade-in 0.3s ease-in forwards;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    align-content: flex-start;
+    background-color: rgba(0, 0, 0, 0.634);
+    border-radius: 4px;
+    max-width: 98vw;
+    min-height: 80vh;
+    margin-bottom: 20px;
+}
+
+.settings-app-component .image-selector div {
+    flex-basis: 15%;
+    margin: 8px;
+    padding: 2px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.settings-app-component .image-selector .background:hover {
+    border: 2px solid rgb(75, 75, 75);
+    background-color: rgb(75, 75, 75);
+}
+
+.settings-app-component .image-selector .background img {
+    max-width: 90%;
+    border-radius: 4px;
+}
+
+.settings-app-component .image-selector .selected {
+    transition: 1s;
+    transition: ease-in;
+    border: 2px solid black;
+    background-color:  black;
+    
+}
+.settings-app-component .image-selector .selected:hover {
+    
+    border: 2px solid rgb(39, 39, 39);
+    background-color:  rgb(39, 39, 39);
+
+}
+
+@media (orientation: portrait) and (max-width: 375px) {
+    .settings-app-component .image-selector div {
+        flex-basis: 96%;
+    }
+}
+@media (orientation: portrait) and (min-width:768px) {
+    .settings-app-component .image-selector div {
+        flex-basis: 45%;
+    }
+    
+}
+@media (orientation: portrait) and (min-width:1024px) {
+    .settings-app-component .image-selector div {
+        flex-basis: 45%;
+    }
+    
+}
+@media (orientation: landscape) and (min-width:1024px) {
+    .time-and-date {
+        font-size: 32px;
+    }
+}
+@media (orientation: landscape) and (min-width:1366px) {
+    .time-and-date {
+        font-size: 42px;
+    }
+}
+@media (orientation: landscape) and (min-width:1500px) {
+    .time-and-date {
+        margin-top: 1vw;
+        margin-bottom: 5vw;
+        font-size: 34px;
+    }
+}

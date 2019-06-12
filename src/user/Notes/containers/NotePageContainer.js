@@ -7,7 +7,6 @@ import * as notesActions from 'actions/notes';
 import {addApp} from 'actions/recentApps';
 
 class NotePageContainer extends React.Component {
-
     componentDidMount() {
         this
             .props

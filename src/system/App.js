@@ -6,12 +6,13 @@ import RecentAppsBar from 'system/RecentAppsBar/components/RecentAppsBar';
 import CalculatorContainer from 'user/Calculator/containers/CalculatorContainer';
 import NotesContainer from 'user/Notes/containers/NotesContainer';
 import NotePageContainer from 'user/Notes/containers/NotePageContainer';
-import DiariesContainer from 'user/Diaries/containers/DiariesContainer';
-import Diary from 'user/Diaries/components/Diary';
+// import DiariesContainer from 'user/Diaries/containers/DiariesContainer';
+// import Diary from 'user/Diaries/components/Diary';
 import FilesAppContainer from 'user/Files/containers/FilesAppContainer';
 import PDFViewerContainer from 'user/PDFViewer/containers/PDFViewerContainer';
 import MediaPlayerContainer from 'user/MediaPlayer/containers/MediaPlayerContainer';
 import ImageViewerContainer from 'user/ImageViewer/containers/ImageViewerContainer';
+import SettingsAppContainer from './Settings/containers/SettingsAppContainer';
 
 import 'system/App.css';
 import 'system/Animations.css';
@@ -22,6 +23,7 @@ const App = () => (
             <Switch>
                 <Route exact path="/" component={Home}/>
                 <Route exact path="/recent" component={RecentAppsContainer}/>
+                <Route exact path="/settings" component={SettingsAppContainer}/>
 
                 <Route exact path="/calculator" component={CalculatorContainer}/>
                 <Route exact path="/notes" component={NotesContainer}/>
@@ -31,7 +33,6 @@ const App = () => (
                 <Route exact path="/diaries/:currentWeek" component={Diary}/> */}
                 <Route exact path="/media-player" component={MediaPlayerContainer}/>
                 <Route exact path="/image-viewer" component={ImageViewerContainer}/>
-
             </Switch>
         </div>
         <div className="navbar">

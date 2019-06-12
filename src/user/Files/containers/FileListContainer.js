@@ -14,7 +14,7 @@ class FileListContainer extends React.Component {
             .props
             .loadFilesFoldersData(this.props.currentPath);
     }
-    
+
     render() {
         let filesAndFolders = this
             .props
@@ -45,8 +45,4 @@ class FileListContainer extends React.Component {
     }
 }
 
-function mapStateToProps(state) {
-    return state.files;
-}
-
-export default connect(mapStateToProps, {navigateToFolder, deleteFileOrFolder, loadFilesFoldersData})(FileListContainer);
+export default connect((state) => state.files, {navigateToFolder, deleteFileOrFolder, loadFilesFoldersData})(FileListContainer);

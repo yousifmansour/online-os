@@ -29,6 +29,16 @@
         overflow: hidden;
     }
 }
+
+@keyframes fade-in{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
 @keyframes app-launch {
     0% {
         /* filter: blur(5px); */

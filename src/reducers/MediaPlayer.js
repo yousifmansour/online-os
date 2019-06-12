@@ -54,7 +54,6 @@ export default function mediaPlayer(state = initialState, action) {
 
         case CLOSE_APP:
             if (state.appName === action.payload) {
-                console.log('yes')
                 return initialState;
             } else 
                 return state;
